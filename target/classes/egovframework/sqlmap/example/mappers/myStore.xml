@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.fleaMarket.myStore.service.impl.MyStoreMapper">
+	<insert id="register" parameterType="productVO">
+		INSERT INTO product		(
+			c_code
+		,	u_no
+		, 	ps_code
+		, 	p_title
+		, 	p_price
+		, 	p_date
+		, 	p_quantity
+		, 	p_trade
+		, 	p_views
+		, 	p_contents
+		) VALUES (
+			#{categoryCode}
+		, 	#{userNo}
+		, 	#{productStatementCode}
+		, 	#{productTitle}
+		, 	#{productPrice}
+		, 	now()
+		, 	#{productQuantity}
+		, 	#{productTrade}
+		, 	#{productViews}
+		, 	#{productContents}
+		)
+	</insert>
+</mapper>

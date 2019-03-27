@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC 
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd"> 
+ 
+<tiles-definitions>
+	<definition name="layouts-tiles" 			template="/WEB-INF/jsp/egovframework/fleaMarket/cmmn/default-layouts.jsp">
+	  	<put-attribute name="head"    			value="/WEB-INF/jsp/egovframework/fleaMarket/cmmn/default-head.jsp" />
+	  	<put-attribute name="nav"    			value="/WEB-INF/jsp/egovframework/fleaMarket/cmmn/default-nav.jsp" />
+	  	<put-attribute name="content"    	value="" />
+	  	<put-attribute name="footer"    		value="/WEB-INF/jsp/egovframework/fleaMarket/cmmn/default-footer.jsp" />
+	  	<put-attribute name="js"    				value="/WEB-INF/jsp/egovframework/fleaMarket/cmmn/default-javascript.jsp" />
+	</definition>
+	
+	<definition name="*/*.tiles"  				extends="layouts-tiles">
+	  	<put-attribute name="content"    	value="/WEB-INF/jsp/egovframework/fleaMarket/{1}/{2}.jsp" />
+	</definition>
+
+	<definition name="*/*.left-tiles"  		extends="layouts-tiles">
+	  	<put-attribute name="content"    	value="{1}/{2}.left-layouts" />
+	</definition>
+
+	<definition name="*/*.left-layouts"  	template="/WEB-INF/jsp/egovframework/fleaMarket/cmmn/left-layouts.jsp">
+	  	<put-attribute name="left"    			value="/WEB-INF/jsp/egovframework/fleaMarket/{1}/left.jsp" />
+	  	<put-attribute name="content"    	value="/WEB-INF/jsp/egovframework/fleaMarket/{1}/{2}.jsp" />
+	</definition>
+	
+	<!-- ajax 타일즈 -->
+	<definition name="*/*.ajax"  				template="/WEB-INF/jsp/egovframework/fleaMarket/{1}/{2}.jsp"/>
+	
+	<!-- myStore 타일즈 -->
+	<definition name="myStore-tiles" 			template="/WEB-INF/jsp/egovframework/fleaMarket/cmmn/myStore-layouts.jsp">
+	  	<put-attribute name="head"    			value="/WEB-INF/jsp/egovframework/fleaMarket/cmmn/myStore-head.jsp" />
+	  	<put-attribute name="left"    			value="/WEB-INF/jsp/egovframework/fleaMarket/cmmn/myStore-left.jsp" />
+	  	<put-attribute name="nav"    			value="/WEB-INF/jsp/egovframework/fleaMarket/cmmn/myStore-nav.jsp" />
+	  	<put-attribute name="content"    		value="" />
+	  	<put-attribute name="footer"    		value="/WEB-INF/jsp/egovframework/fleaMarket/cmmn/myStore-footer.jsp" />
+	  	<put-attribute name="js"    			value="/WEB-INF/jsp/egovframework/fleaMarket/cmmn/myStore-javascript.jsp" />
+	</definition>
+	
+	<definition name="*/*.tiles2"  			extends="myStore-tiles">
+	  	<put-attribute name="content"    	value="/WEB-INF/jsp/egovframework/fleaMarket/{1}/{2}.jsp" />
+	</definition>
+	
+</tiles-definitions>

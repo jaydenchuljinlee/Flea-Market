@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC 
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd"> 
+ 
+<tiles-definitions>
+	
+	<definition name="admin-layouts" template="/WEB-INF/jsp/egovframework/admin/cmmn/default-layouts.jsp">
+	  	<put-attribute name="header"    	value="/WEB-INF/jsp/egovframework/admin/cmmn/default-header.jsp" />
+	  	<put-attribute name="left"    		value="/WEB-INF/jsp/egovframework/admin/cmmn/default-left.jsp" />
+	  	<put-attribute name="nav"    		value="/WEB-INF/jsp/egovframework/admin/cmmn/default-nav.jsp" />
+	  	<put-attribute name="content"   	value="" />
+	  	<put-attribute name="js"    	value="/WEB-INF/jsp/egovframework/admin/cmmn/default-js-link.jsp" /> <!-- content 별  javascript소스 import를 위한 파일 -->
+	</definition>
+	
+	<!-- 기본 타일즈 -->
+	<definition name="*/*.admin" extends="admin-layouts">
+	  	<put-attribute name="content"   value="/WEB-INF/jsp/egovframework/admin/{1}/{2}.jsp" />
+	</definition>
+	
+	<!-- 로그인, 에러, 레지스터 타일즈 -->
+	<definition name="admin-layouts2" template="/WEB-INF/jsp/egovframework/admin/cmmn/simple-layouts.jsp">
+	  	<put-attribute name="header"    	value="/WEB-INF/jsp/egovframework/admin/cmmn/simple-header.jsp" />
+	  	<put-attribute name="content"   	value="" />
+	  	<put-attribute name="js"    	value="/WEB-INF/jsp/egovframework/admin/cmmn/simple-js-link.jsp" />
+	</definition>
+
+	<definition name="*/*.admin2" extends="admin-layouts2">
+	  	<put-attribute name="content"   value="/WEB-INF/jsp/egovframework/admin/{1}/{2}.jsp" />
+	</definition>
+</tiles-definitions>

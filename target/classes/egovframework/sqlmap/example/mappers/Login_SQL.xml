@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.fleaMarket.login.service.impl.LoginMapper">
+
+	<insert id="insertUserOne" parameterType="map">
+		<selectKey keyProperty="registNo" order="BEFORE" resultType="int" >
+			SELECT 	MAX(user_no) + 1 FROM user
+		</selectKey>
+		
+		INSERT INTO user	(
+			user_no
+		,	user_id	
+		,	user_pw	
+		,	user_name	
+		,	user_birth_date	
+		,	user_gender	
+		,	user_email	
+		,	user_phone	
+		,	user_zipcode	
+		,	user_address	
+		,	user_join_date	
+		) VALUES (
+			${registNo}
+		,	#{registId}	
+		,	#{registPw}	
+		,	#{registName}	
+		,	#{registBirthDay}	
+		,	#{registGender}	
+		,	#{registEmail}	
+		,	#{registPhone}	
+		,	#{registZipcode}	
+		,	#{registAddress}	
+		,	CAST(CURDATE() AS CHAR)
+		)
+	</insert> 
+
+	<select id="selectUserOne" parameterType="String" resultType="egovMap">
+		SELECT	user_no
+					,	user_id	
+					,	user_pw	
+					,	user_name	
+					,	user_gender
+		FROM		user
+		WHERE	user_id = #{_parameter}
+		AND			user_enable = 'Y'	
+	</select>
+
+</mapper>
+
