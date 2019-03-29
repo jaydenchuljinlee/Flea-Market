@@ -74,7 +74,7 @@ public class MainController {
 	
 	@RequestMapping(value = "/test.do", method = RequestMethod.POST)
 	public void test(HttpServletRequest req) throws Exception {
-		
+		System.out.println("d");
 		mainService.test(req);
 	}
 	

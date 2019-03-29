@@ -1,6 +1,7 @@
 package egovframework.fleaMarket.payment.service.impl;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -14,13 +15,13 @@ public class PaymentServiceImp implements PaymentService {
 
 	@Resource(name = "paymentMapper")
 	private PaymentMapper paymentMapper;
-	
+
 	@Override
-	public void insert(HashMap<String, Object> map) throws Exception {
-		
+	public void insert(Map<String, Object> map) throws Exception {
 		paymentMapper.insert(map);
 		
 	}
-
+	
+	
 
 }

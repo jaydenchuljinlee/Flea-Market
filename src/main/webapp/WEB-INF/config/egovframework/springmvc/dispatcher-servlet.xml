@@ -11,6 +11,10 @@
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service" />
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository" />
 	</context:component-scan>
+	
+	<bean id="filePath" class="org.springframework.core.io.FileSystemResource">
+		<constructor-arg value="/img/upload/"></constructor-arg>
+	</bean>
 
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
 		<property name="webBindingInitializer">
@@ -44,7 +48,9 @@
 	</bean>
 
 	<!-- 파일 업로드를 위한 리졸버 -->
-	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" >
+		
+	</bean>
 
 	<!-- 타일즈 뷰 설정 -->
 	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
@@ -80,4 +86,6 @@
 	<!-- /For Pagination Tag -->
 
 	<mvc:view-controller path="/cmmn/validator.do" view-name="cmmn/validator" />
+	
+	
 </beans>

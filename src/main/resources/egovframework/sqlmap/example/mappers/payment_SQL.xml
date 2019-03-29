@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="egovframework.fleaMarket.payment.service.imp.PaymentMapper">
+<mapper namespace="egovframework.fleaMarket.payment.service.impl.PaymentMapper">
 
 	
 
 	<insert id="insert" parameterType="map">
 		<selectKey keyProperty="pay_no" resultType="int" order="BEFORE">
-			SELECT MAX(pay_no)+1 FROM PAYMENT
+			SELECT MAX(pay_no)+1 FROM payment
 		</selectKey>
-		INSERT INTO PAYMENT (
+		INSERT INTO payment (
 			pay_no,
 			p_no,
 			u_no,

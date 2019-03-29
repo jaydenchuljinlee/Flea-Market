@@ -7,18 +7,39 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.DefaultResourceLoader;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.ServletContextAware;
+import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 @Component("fileUtils")
-public class FileUtils {
-	private static final String filePath = "C:\\dev\\file\\";
+public class FileUtils implements ServletContextAware{
+	private static final Logger logger = LoggerFactory.getLogger(FileUtils.class);
+	private ServletContext context;
+
 	
 	public List<Map<String,Object>> parseInsertFileInfo(HttpServletRequest req) throws Exception {
+		
+		String filePath = context.getRealPath("/wepapp");
+		logger.info(filePath);
+		
 		MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest)req;
         Iterator<String> iterator = multipartHttpServletRequest.getFileNames();
 
@@ -33,6 +54,7 @@ public class FileUtils {
         SimpleDateFormat now = new SimpleDateFormat("yyMMddHHmmss");
         
         File file = new File(filePath);
+        logger.info(file.getPath());
         if(file.exists() == false){
             file.mkdirs();
         }
@@ -44,7 +66,7 @@ public class FileUtils {
                 originalFileExtension = originalFileName.substring(originalFileName.lastIndexOf("."));
                 storedFileName = now + originalFileExtension;
                 
-                file = new File(filePath + storedFileName);
+                file = new File(file + storedFileName);
                 multipartFile.transferTo(file);
                  
                 listMap = new HashMap<String,Object>();
@@ -62,5 +84,17 @@ public class FileUtils {
         
         return list;
 	}
+
+	@Override
+	public void setServletContext(ServletContext context) {
+
+		this.context = context;
+		
+	}
+
+	public String getServletContext() {
+		return context.getContextPath();
+	}
+
 	
 }

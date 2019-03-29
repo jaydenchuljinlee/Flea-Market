@@ -274,7 +274,11 @@
 			
 			<!-- 결제하기 버튼 -->
 			<label>
-				<button name="bynPay" value="결제하기" class="btn_payment">결제하기</button>
+				<form action="complete_pay.do" method="get">
+					<button name="bynPay" type="submit" value="결제하기" class="btn_payment">결제하기</button>
+				</form>
+				
+				
 				
 			</label>
 			<!-- //결제하기 버튼 -->
@@ -314,7 +318,6 @@
 				
 			});  */
 			
-			location.href = "";
 		});
 	});
 	
