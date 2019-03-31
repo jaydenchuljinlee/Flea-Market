@@ -23,7 +23,7 @@ public class FileUtils {
 	public List<Map<String,Object>> parseInsertFileInfo(HttpServletRequest req) throws Exception {
 		MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest)req;
 		Iterator<String> iterator = multipartHttpServletRequest.getFileNames();
-
+		
         MultipartFile multipartFile = null;
         String originalFileName = null;
         String originalFileExtension = null;
@@ -39,20 +39,19 @@ public class FileUtils {
         String filePath = relativePath;
         
         File file = new File(filePath);
-        logger.info(file.getPath());
+        
         if(file.exists() == false){
             file.mkdirs();
         }
          
         while(iterator.hasNext()){
-        	logger.info("ㅌㅁ");
             multipartFile = multipartHttpServletRequest.getFile(iterator.next());
             
             if(multipartFile.isEmpty() == false){
                 originalFileName = multipartFile.getOriginalFilename();
                 originalFileExtension = originalFileName.substring(originalFileName.lastIndexOf("."));
                 storedFileName = now + originalFileExtension;
-               
+                
                 file = new File(filePath + storedFileName);
                 
                 multipartFile.transferTo(file);
@@ -64,6 +63,8 @@ public class FileUtils {
                 list.add(listMap);
                 
                 System.out.println(listMap.get("ORIGINAL_FILE_NAME"));
+            } else {
+            	logger.info("false");
             }
         }
         

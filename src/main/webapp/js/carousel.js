@@ -3,6 +3,10 @@
   
 	$(function() {
 		
+		$("#imgInp").change("on",function() {
+			console.log($(this));
+		})
+		
 	  drop.ondragover = function(e) {
 		  	e.preventDefault(); // 이 부분이 없으면 ondrop 이벤트가 발생하지 않습니다.
 	  	};
@@ -10,18 +14,20 @@
 	  		
 		  	e.preventDefault(); // 이 부분이 없으면 파일을 브라우저 실행해버립니다.
 		  	
-			var data = e.dataTransfer;
+			var data 			= e.dataTransfer;
 			
 			if (data.items) { // DataTransferItemList 객체 사용
 				for (var i = 0; i < data.items.length; i++) { // DataTransferItem 객체 사용
-					var div = document.createElement("div"),
-						img = document.createElement("img");
+					var div				= document.createElement("div"),
+						img				= document.createElement("img"),
+						file			= data.files[i],
+						fileType		= data.items[i].kind;
 					
-					if (data.items[i].kind == "file") { // 아이템 종류가 파일이면
+					if (fileType == "file") { // 아이템 종류가 파일이면
 						
 						var reader = new FileReader();
 						
-						reader.readAsDataURL(data.files[i]);
+						reader.readAsDataURL(file);
 						
 						reader.onload = function(e) {
 							
@@ -31,6 +37,12 @@
 							div.appendChild(img);
 							
 							$(".preview").append(div);
+							
+							var form = $("#uploadFrm");
+							var formData = new FormData(form);
+							formData.append("upload[]",file);
+							console.log($("#imgInp"));
+							
 						}
 					}
 				}
