@@ -7,5 +7,4 @@
 <!-- Custom scripts for this template -->
 <script src="js/agency.min.js"></script>
 
-<!-- carousel -->
-<script src="js/carousel.js"></script>
+

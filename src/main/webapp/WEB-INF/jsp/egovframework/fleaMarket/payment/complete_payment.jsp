@@ -6,6 +6,13 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <link rel="stylesheet" href="css/mypage/mypage.css">
 
+<script type= text/javascript>
+	history.pushState(null, null, location.href);
+	window.onpopstate = function(event) {
+	    history.go(1);
+	};
+</script>
+
 <div class="container mt-5">
 	complete
 </div>
