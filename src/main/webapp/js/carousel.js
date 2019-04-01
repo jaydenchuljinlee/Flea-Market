@@ -4,7 +4,12 @@
 	$(function() {
 		
 		$("#imgInp").change("on",function() {
-			console.log($(this));
+			
+			/*$.each($(this).prop("files"), function(i,item) {
+				
+				console.log(item);
+			})*/
+			
 		})
 		
 	  drop.ondragover = function(e) {
@@ -16,43 +21,43 @@
 		  	
 			var data 			= e.dataTransfer;
 			
-			if (data.items) { // DataTransferItemList 객체 사용
-				for (var i = 0; i < data.items.length; i++) { // DataTransferItem 객체 사용
-					var div				= document.createElement("div"),
-						img				= document.createElement("img"),
-						file			= data.files[i],
-						fileType		= data.items[i].kind;
+			if (!data.items) {
+				alert("파일이 없습니다");
+				return;
+			}
+			
+			for (var i=0,loop=data.items.length; i<loop; i++) { // DataTransferItem 객체 사용
+				var div				= document.createElement("div"),
+					img				= document.createElement("img"),
+					file			= data.files[i],
+					fileType		= data.items[i].kind;
+					fileCheck		= /\.(gif|jpg|jpeg|png)$/i.test(data.files[i].name);
 					
-					if (fileType == "file") { // 아이템 종류가 파일이면
-						
-						var reader = new FileReader();
-						
-						reader.readAsDataURL(file);
-						
-						reader.onload = function(e) {
-							
-							img.setAttribute("src",e.target.result);
-							img.setAttribute("class","col-12");
-							div.setAttribute("class","col-12 previews_"+i);
-							div.appendChild(img);
-							
-							$(".preview").append(div);
-							
-							var form = $("#uploadFrm");
-							var formData = new FormData(form);
-							//formData.append("upload[]",file);
-							console.log($("#imgInp"));
-							
-						}
-					}
+				if (!fileCheck) { // 아이템 종류가 파일이면
+					alert("올바른 확장자가 아닙니다. *표준 확장자: gif|jpg|jpeg|png*");
+					return;
 				}
-				$("#imgInp").prop("files",data.files);
 				
-			} else { // File API 사용
-				for (var i = 0; i < data.files.length; i++) {
-					alert(data.files[i].name);
+				var reader = new FileReader();
+				
+				reader.readAsDataURL(file);
+				
+				reader.onload = function(e) {
+					
+					img.setAttribute("src",e.target.result);
+					img.setAttribute("class","col-12");
+					div.setAttribute("class","col-12 previews_"+i);
+					div.appendChild(img);
+					
+					$(".preview").append(div);
+					
+					var form = $("#uploadFrm");
+					var formData = new FormData(form);
+					
 				}
 			}
+			$("#imgInp").prop("files",data.files);
+			
 		  };
 	})
   

@@ -3,6 +3,7 @@ package egovframework.fleaMarket.cmmn.service.util;
 import java.text.SimpleDateFormat;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -32,37 +33,50 @@ public class FileUtils {
         List<Map<String,Object>> list = new ArrayList<Map<String,Object>>();
         Map<String, Object> listMap = null;
         
-        SimpleDateFormat now = new SimpleDateFormat("yyMMddHHmmss");
-        String realpath = req.getSession().getServletContext().getRealPath("/");
-        String relativePath = relativePath(realpath);
+        SimpleDateFormat format = new SimpleDateFormat("yyMMddHHmmss");
+        Date date				= new Date();
+        String now				= format.format(date);
+        String realpath			= req.getSession().getServletContext().getRealPath("/");
+        String relativePath		= relativePath(realpath);
+        String filePath			= relativePath;
         
-        String filePath = relativePath;
+        for (int i=0,loop=4; i<loop; i+=2) {
+        	
+        	filePath += now.substring(i, i+2) + "\\";
+        	
+        }
         
         File file = new File(filePath);
         
         if(file.exists() == false){
             file.mkdirs();
         }
-         
+        
         while(iterator.hasNext()){
             multipartFile = multipartHttpServletRequest.getFile(iterator.next());
             
             if(multipartFile.isEmpty() == false){
                 originalFileName = multipartFile.getOriginalFilename();
                 originalFileExtension = originalFileName.substring(originalFileName.lastIndexOf("."));
-                storedFileName = now + originalFileExtension;
+                storedFileName = now + "_" + originalFileName;
                 
                 file = new File(filePath + storedFileName);
+                logger.info(file.toString());
                 
-                multipartFile.transferTo(file);
-                 
+                try {
+                	multipartFile.transferTo(file);
+                } catch(Exception e) {
+                	logger.info(e.getMessage());
+                }
+                
+                
                 listMap = new HashMap<String,Object>();
                 listMap.put("ORIGINAL_FILE_NAME", originalFileName);
                 listMap.put("STORED_FILE_NAME", storedFileName);
                 listMap.put("FILE_SIZE", multipartFile.getSize());
                 list.add(listMap);
                 
-                System.out.println(listMap.get("ORIGINAL_FILE_NAME"));
+                logger.info(listMap.get("ORIGINAL_FILE_NAME").toString());
             } else {
             	logger.info("false");
             }
