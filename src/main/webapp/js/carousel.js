@@ -1,4 +1,4 @@
-	var drop = document.getElementById("dragdrop");
+	var drop = document.getElementById("imgInp");
 
   
 	$(function() {
@@ -40,12 +40,14 @@
 							
 							var form = $("#uploadFrm");
 							var formData = new FormData(form);
-							formData.append("upload[]",file);
+							//formData.append("upload[]",file);
 							console.log($("#imgInp"));
 							
 						}
 					}
 				}
+				$("#imgInp").prop("files",data.files);
+				
 			} else { // File API 사용
 				for (var i = 0; i < data.files.length; i++) {
 					alert(data.files[i].name);
