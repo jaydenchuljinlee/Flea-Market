@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-        http://www.springframework.org/schema/jdbc  http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd">
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/jdbc  
+        http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd
+        http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 	
+	<util:properties id="jdbcProperties" location="classpath:config/properties/jdbc.properties" />
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
-      <property name="driverClassName" value="org.mariadb.jdbc.Driver" />
-      <property name="url" value="jdbc:mariadb://kksll.c8emnh0bb9pj.us-east-2.rds.amazonaws.com:3306/kksll" />
-      <property name="username" value="kksll" />
-      <property name="password" value="kksll***" />
+      <property name="driverClassName" value="#{jdbcProperties['jdbc.driverClassName']}" />
+      <property name="url" value="#{jdbcProperties['jdbc.url']}" />
+      <property name="username" value="#{jdbcProperties['jdbc.userName']}" />
+      <property name="password" value="#{jdbcProperties['jdbc.password']}" />
    </bean>
 	
 	<!-- <jdbc:embedded-database id="dataSource" type="HSQL">

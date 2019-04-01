@@ -6,7 +6,7 @@
 
 	<insert id="insert" parameterType="map">
 		<selectKey keyProperty="pay_no" resultType="int" order="BEFORE">
-			SELECT MAX(pay_no)+1 FROM payment
+			SELECT ifnull(MAX(pay_no)+1,1) FROM payment
 		</selectKey>
 		INSERT INTO payment (
 			pay_no,
@@ -18,7 +18,7 @@
 			pay_price)
 			
 			VALUES (
-			${pay_no},
+			#{pay_no},
 			#{p_no},
 			#{u_no},
 			#{pay_date},
