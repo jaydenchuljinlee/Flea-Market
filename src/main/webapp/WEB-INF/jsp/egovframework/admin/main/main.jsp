@@ -43,24 +43,6 @@
 		</div>
 		
 		<div class="col-md-3">
-			<div data-url="adminSeminar.do?op=wait" class="well bgreen mainMenu">
-				<h5>세미나 신청</h5>
-				<div class="mainRight">
-					<h3>1</h3>
-				</div>
-			</div>
-		</div>
-		
-		<div class="col-md-3">
-			<div data-url="adminOffLecture.do?op=wait" class="well bgreen mainMenu">
-				<h5>오프 강의 신청</h5>
-				<div class="mainRight">
-					<h3>1</h3>
-				</div>
-			</div>
-		</div>
-		
-		<div class="col-md-3">
 			<div data-url="adminUsedSellRequest.do?op=wait" class="well bviolet mainMenu">
 				<h5>중고 판매 신청</h5>
 				<div class="mainRight">
@@ -116,38 +98,21 @@
 <h3>사이트 네비게이션</h3>
 <div id="tabs">
 	<ul class="tabsList">
-	  <li data-url="#"><a href="#tabs-1">도서</a></li>
+	  <li data-url="#"><a href="#tabs-1">물품</a></li>
 	  <li data-url="#"><a href="#tabs-2">중고</a></li>
-	  <li data-url="#"><a href="#tabs-3">교육</a></li>
-	  <li data-url="#"><a href="#tabs-4">개발자 공간</a></li>
-	  <li data-url="eventList.do"><a href="#tabs-5">이벤트</a></li>
-	  <li data-url="#"><a href="#tabs-6">고객센터</a></li>
+	  <li data-url="eventList.do"><a href="#tabs-3">이벤트</a></li>
+	  <li data-url="#"><a href="#tabs-4">고객센터</a></li>
 	</ul>
 	
 	<div id="tabs-1">
-		<p data-url="recommendBook.do"><a href="#">맞춤 도서</a></p>
-		<p data-url="newBook.do"><a href="#">신간 도서</a></p>
-		<p data-url="categoryBook.do"><a href="#">전체 도서</a></p>
+		<p data-url="recommendBook.do"><a href="#">뭘 넣을까</a></p>
 	</div>
 	<div id="tabs-2">
-		<p data-url="usedbookMain.do"><a href="#">IT-Book 중고도서</a></p>
-		<p data-url="lecture.do"><a href="#">IT-Book에 파세요!</a></p>
-		<p data-url="usedbookGuide.do"><a href="#">중고팔기 이용안내</a></p>
+		<p data-url="usedbookMain.do"><a href="#">안내</a></p>
 	</div>
 	<div id="tabs-3">
-		<p><a href="#">세미나</a></p>
-		<p><a href="#">강의</a></p>
-		<p><a href="#">자격증</a></p>
 	</div>
 	<div id="tabs-4">
-		<p><a href="#">Talk! & Tip!</a></p>
-		<p><a href="#">질문있습니다!!</a></p>
-		<p><a href="#">IT News & Column</a></p>
-		<p><a href="#">스터디</a></p>
-	</div>
-	<div id="tabs-5">
-	</div>
-	<div id="tabs-6">
 		<p><a href="#">FAQ</a></p>
 		<p><a href="#">1:1 문의</a></p>
 	</div>
@@ -248,8 +213,6 @@
       		<!-- ajax로 목록 가져오기 -->
       		<option>물품</option>
       		<option>중고</option>
-      		<option>교육</option>
-      		<option>개발자 공간</option>
       		<option>이벤트</option>
       		<option>고객센터</option>
       	</select>

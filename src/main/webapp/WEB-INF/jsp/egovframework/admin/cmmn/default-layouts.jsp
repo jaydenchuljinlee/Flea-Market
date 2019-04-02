@@ -16,8 +16,13 @@
 			<!-- Sidebar ends -->
 			
 			<!-- Main bar -->
-			<tiles:insertAttribute name="content"/>
-			<!-- Main bar ends -->
+			<div class="mainbar">
+				<div class="matter">
+					<div class="container">
+						<tiles:insertAttribute name="content"/>
+					</div>
+				</div>
+			</div>
 			
 			<div class="clearfix"></div>
 		</div> <!--/ Content ends -->

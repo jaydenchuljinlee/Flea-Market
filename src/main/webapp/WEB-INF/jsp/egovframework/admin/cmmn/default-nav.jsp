@@ -9,7 +9,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a id="adminMain" href="#" class="navbar-brand pageMove"><span class="bold">IT Book 관리자 페이지</span></a>
+			<a id="adminMain" href="#" class="navbar-brand pageMove"><span class="bold">토르장터 관리자 페이지</span></a>
 		</div>
 		<!-- Site name for smallar screens -->
 		<!-- Navigation starts -->

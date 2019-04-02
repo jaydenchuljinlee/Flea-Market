@@ -10,3 +10,17 @@ var left = { // 전역변수
 		$("#headerFrm").submit(); // form(#headerFrm)을 submit 한다.
 	}
 }
+
+$(document).ready(function() {
+	
+	$(".pageMove").on("click",function() {
+		var pageName = $(this).attr("id");
+		
+		left.pageSubmitFn(pageName);
+	})
+	
+	$(".has_submenu").on("click",function() {
+		$(this).attr("class","open");
+		
+	})
+});

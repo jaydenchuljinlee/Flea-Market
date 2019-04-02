@@ -8,9 +8,9 @@
 		<ul class="navi">
 			<!-- Use the class nred, ngreen, nblue, nlightblue, nviolet or norange to add background color. You need to use this in <li> tag. -->
 
-			<li id="adminMain" class="nred pageMove adminMain"><a href="#"><i class="fa fa-desktop"></i> 메인</a></li>
+			<li id="adminMain" class="nred pageMove pageMove"><a href="#"><i class="fa fa-desktop"></i> 메인</a></li>
 			<!-- Menu with sub menu -->
-			<li class="has_submenu nlightblue adminMember adminSales">
+			<li class="has_submenu nlightblue">
 				<a href="#">
 					<!-- Menu name with icon -->
 					<i class="fa fa-user"></i> 회원 / 매출 
@@ -22,7 +22,7 @@
 					<li id="adminSales" class="pageMove"><a href="#">매출</a></li>
 				</ul>
 			</li>
-			<li class="has_submenu nlightblue adminPay adminExchange adminRefund adminDelivery">
+			<li class="has_submenu nlightblue">
 				<a href="#">
 					<!-- Menu name with icon -->
 					<i class="fa fa-th"></i> 구매 관리
@@ -36,7 +36,7 @@
 					<li id="adminDelivery" class="pageMove"><a href="#">배송 관리</a></li>
 				</ul>
 			</li>
-			<li class="has_submenu nlightblue adminUsedBookManage adminUsedSellRequest">
+			<li class="has_submenu nlightblue">
 				<a href="#">
 					<!-- Menu name with icon -->
 					<i class="fa fa-book"></i> 물품
@@ -49,8 +49,8 @@
 				</ul>
 			</li>
 			
-			<li id="adminEvent" class="nred pageMove adminEvent"><a href="#"><i class="fa fa-certificate"></i> 이벤트</a></li>
-			<li class="has_submenu nblue adminFaq adminAsk">
+			<li id="adminEvent" class="nred pageMove"><a href="#"><i class="fa fa-certificate"></i> 이벤트</a></li>
+			<li class="has_submenu nblue">
 				<a href="#">
 					<i class="fa fa-volume-control-phone"></i> 고객센터
 					<span class="pull-right"><i class="fa fa-angle-right"></i></span>
@@ -84,20 +84,4 @@ if (pageName === "") {
 	$("." + pageName).addClass("open");
 	$("#" + pageName).addClass("active");
 }
-$(".adminImageBoard").click(function() {
-	var pageName = $(this).attr("id");
-	$("#pageName").val(pageName);
-	$("#pageFrm").attr("action", "adminImageBoard.do").submit();
-});
-
-$(".adminBoard").click(function() {
-	var pageName = $(this).attr("id");
-	$("#pageName").val(pageName);
-	$("#pageFrm").attr("action", "adminBoard.do").submit();
-});
-$(".adminStudyRoomManage").click(function() {
-	var pageName = $(this).attr("id");
-	$("#pageName").val(pageName);
-	$("#pageFrm").attr("action", "adminStudyRoomManage.do").submit();
-});
 </script>
