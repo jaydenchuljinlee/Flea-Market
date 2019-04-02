@@ -10,9 +10,4 @@ public class AdminMainController {
 	public String initMain() throws Exception {
 		return "main/main.admin";
 	}
-	
-	@RequestMapping(value = "tables.do")
-	public String table() throws Exception {
-		return "tables/tables.admin";
-	}
 }

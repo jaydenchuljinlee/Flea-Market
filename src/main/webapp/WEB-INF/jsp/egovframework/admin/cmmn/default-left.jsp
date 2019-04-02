@@ -8,7 +8,7 @@
 		<ul class="navi">
 			<!-- Use the class nred, ngreen, nblue, nlightblue, nviolet or norange to add background color. You need to use this in <li> tag. -->
 
-			<li id="adminMain" class="nred pageMove pageMove"><a href="#"><i class="fa fa-desktop"></i> 메인</a></li>
+			<li id="admin_main" class="nred pageMove pageMove"><a href="#"><i class="fa fa-desktop"></i> 메인</a></li>
 			<!-- Menu with sub menu -->
 			<li class="has_submenu nlightblue">
 				<a href="#">
@@ -18,8 +18,8 @@
 					<span class="pull-right"><i class="fa fa-angle-right"></i></span>
 				</a>
 				<ul>
-					<li id="adminMember" class="pageMove"><a href="#">회원</a></li>
-					<li id="adminSales" class="pageMove"><a href="#">매출</a></li>
+					<li id="admin_member" class="pageMove"><a href="#">회원</a></li>
+					<li id="admin_sales" class="pageMove"><a href="#">매출</a></li>
 				</ul>
 			</li>
 			<li class="has_submenu nlightblue">
@@ -30,10 +30,10 @@
 					<span class="pull-right"><i class="fa fa-angle-right"></i></span>
 				</a>
 				<ul>
-					<li id="adminPay" class="pageMove"><a href="#">결제 내역</a></li>
-					<li id="adminRefund" class="pageMove"><a href="#">환불 내역</a></li>
-					<li id="adminExchange" class="pageMove"><a href="#">교환 내역</a></li>
-					<li id="adminDelivery" class="pageMove"><a href="#">배송 관리</a></li>
+					<li id="admin_pay" class="pageMove"><a href="#">결제 내역</a></li>
+					<li id="admin_refund" class="pageMove"><a href="#">환불 내역</a></li>
+					<li id="admin_exchange" class="pageMove"><a href="#">교환 내역</a></li>
+					<li id="admin_delivery" class="pageMove"><a href="#">배송 관리</a></li>
 				</ul>
 			</li>
 			<li class="has_submenu nlightblue">
@@ -44,20 +44,20 @@
 					<span class="pull-right"><i class="fa fa-angle-right"></i></span>
 				</a>
 				<ul>
-					<li id="adminUsedBookManage" class="pageMove"><a href="#">물품 관리</a></li>
-					<li id="adminUsedSellRequest" class="pageMove"><a href="#">판매 신청 목록</a></li>
+					<li id="admin_product_manager" class="pageMove"><a href="#">물품 관리</a></li>
+					<li id="admin_product_register" class="pageMove"><a href="#">판매 신청 목록</a></li>
 				</ul>
 			</li>
 			
-			<li id="adminEvent" class="nred pageMove"><a href="#"><i class="fa fa-certificate"></i> 이벤트</a></li>
+			<li id="admin_event" class="nred pageMove"><a href="#"><i class="fa fa-certificate"></i> 이벤트</a></li>
 			<li class="has_submenu nblue">
 				<a href="#">
 					<i class="fa fa-volume-control-phone"></i> 고객센터
 					<span class="pull-right"><i class="fa fa-angle-right"></i></span>
 				</a>
 				<ul>
-					<li id="adminFaq" class="pageMove"><a href="#">FAQ</a></li>
-					<li id="adminAsk" class="pageMove"><a href="#">1:1 문의</a></li>
+					<li id="admin_faq" class="pageMove"><a href="#">FAQ</a></li>
+					<li id="admin_ask" class="pageMove"><a href="#">1:1 문의</a></li>
 				</ul>
 			</li> 
 		</ul>
