@@ -70,6 +70,7 @@
 			<list>
 				<value>/WEB-INF/tiles/default-layout.xml</value>
 				<value>/WEB-INF/tiles/admin-layout.xml</value>
+				<value>/WEB-INF/tiles/myStore-layout.xml</value>
 			</list>
 		</property>
 	</bean>

@@ -7,6 +7,6 @@
 		<typeAlias alias="searchVO" type="egovframework.example.sample.service.SampleDefaultVO"/>
 		<typeAlias alias="sampleVO" type="egovframework.example.sample.service.SampleVO"/>
 		<typeAlias alias="itemVO" type="egovframework.fleaMarket.cmmn.service.VO.ItemVO"/>
-		<typeAlias alias="productVO" type="egovframework.fleaMarket.myStore.service.ProductVO"/>
+		<typeAlias alias="productVO" type="egovframework.myStore.register.service.ProductVO"/>
     </typeAliases>
 </configuration>

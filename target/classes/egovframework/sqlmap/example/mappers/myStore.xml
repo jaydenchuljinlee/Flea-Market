@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="egovframework.fleaMarket.myStore.service.impl.MyStoreMapper">
-	<insert id="register" parameterType="productVO">
+<mapper namespace="egovframework.myStore.register.service.impl.RegisterMapper">
+	<insert id="insertProduct" parameterType="productVO">
 		INSERT INTO product		(
-			c_code
+			ca_code
+		,	cb_code
 		,	u_no
 		, 	ps_code
 		, 	p_title
@@ -14,7 +15,8 @@
 		, 	p_views
 		, 	p_contents
 		) VALUES (
-			#{categoryCode}
+			#{aCategoryCode}
+		,	#{bCategoryCode}
 		, 	#{userNo}
 		, 	#{productStatementCode}
 		, 	#{productTitle}
@@ -26,4 +28,19 @@
 		, 	#{productContents}
 		)
 	</insert>
+	
+	<select id="selectACategoryList" resultType="egovMap">
+		SELECT ca_code, ca_contents
+		FROM category_a
+	</select>
+	
+	<select id="selectBCategoryList" parameterType="String" resultType="egovMap">
+		SELECT cb_code, cb_contents
+		FROM category_b
+		<where>
+			<if test='value != null and value != ""'>
+				AND ca_code like #{value}			
+			</if>
+		</where>
+	</select>
 </mapper>
