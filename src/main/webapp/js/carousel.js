@@ -3,15 +3,6 @@
   
 	$(function() {
 		
-		$("#imgInp").change("on",function() {
-			
-			/*$.each($(this).prop("files"), function(i,item) {
-				
-				console.log(item);
-			})*/
-			
-		})
-		
 	  drop.ondragover = function(e) {
 		  	e.preventDefault(); // 이 부분이 없으면 ondrop 이벤트가 발생하지 않습니다.
 	  	};
