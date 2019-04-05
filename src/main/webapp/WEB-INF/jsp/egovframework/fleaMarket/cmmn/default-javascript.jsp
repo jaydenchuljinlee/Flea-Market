@@ -17,9 +17,6 @@
 				
 			}
 	}
-		
-		
-	
 	
 	$(function() {
 		$(".nav-item").on("click",function() {

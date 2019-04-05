@@ -1,23 +1,39 @@
 package egovframework.fleaMarket.main.web;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import egovframework.fleaMarket.main.service.MainService;
+import egovframework.myStore.register.service.ProductVO;
+import egovframework.rte.psl.dataaccess.util.EgovMap;
 
 @Controller
 public class MainController {
+	private static Logger logger = LoggerFactory.getLogger(MainController.class);
 	
 	@Resource(name = "mainService")
 	MainService mainService;
 	
 	@RequestMapping(value = "main.do")
 	public String main() throws Exception {
+		
+		try {
+			List<EgovMap> selectList = mainService.select();
+			
+		} catch(Exception e) {
+			logger.info(e.getMessage());
+		}
+		
+		/**/
 		
 		return "main/main.tiles";
 	}

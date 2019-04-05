@@ -1,96 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="egovframework.example.sample.service.impl.SampleMapper">
+<mapper namespace="egovframework.fleaMarket.main.service.impl.MainMapper">
 
-	<resultMap id="item" type="egovframework.fleaMarket.cmmn.service.VO.ItemVO">
-		<result property="category_code" column="category_code"/>
-		<result property="title" column="title"/>
-		<result property="price" column="price"/>
-		<result property="quantity" column="quantity"/>
-		<result property="statement" column="statement"/>
-		<result property="used" column="used"/>
-		<result property="trade" column="trade"/>
-		<result property="contents" column="contents"/>
+	<resultMap id="product" type="ProductVO">
+		<result property="productNo" column="p_no"/>
+		<result property="aCategoryCode" column="ca_code"/>
+		<result property="bCategoryCode" column="cb_code"/>
+		<result property="userNo" column="u_no"/>
+		<result property="productStatementCode" column="ps_code"/>
+		<result property="productTitle" column="p_title"/>
+		<result property="productPrice" column="p_price"/>
+		<result property="productDate" column="p_date"/>
+		<result property="productQuantity" column="p_quantity"/>
+		<result property="productTrade" column="p_trade"/>
+		<result property="productViews" column="p_views"/>
+		<result property="productContents" column="p_contents"/>
 	</resultMap>
 
-	<insert id="insertSample" parameterType="SampleVO">
-
-			INSERT INTO SAMPLE
-				( ID
-				  , NAME
-				  , DESCRIPTION
-				  , USE_YN
-				  , REG_USER )
-			VALUES ( #{id}
-				  , #{name}
-				  , #{description}
-				  , #{useYn}
-				  , #{regUser} )
-
-	</insert>
-
-	<update id="updateSample">
-
-			UPDATE SAMPLE
-			SET ID=#{id}
-				, NAME=#{name}
-				, DESCRIPTION=#{description}
-				, USE_YN=#{useYn}
-				  WHERE ID=#{id}
-
-	</update>
-
-	<delete id="deleteSample">
-
-			DELETE FROM SAMPLE
-			WHERE ID=#{id}
-
-	</delete>
-
-	<select id="selectSample">
-
-			SELECT
-				ID, NAME, DESCRIPTION, USE_YN, REG_USER
-			FROM SAMPLE
-			WHERE ID=#{id}
-
+	<select id="selectList" resultType="egovMap">
+		SELECT * FROM payment
 	</select>
-
-	<select id="selectSampleList" parameterType="searchVO" resultType="egovMap">
-
-			SELECT
-				ID, NAME, DESCRIPTION, USE_YN, REG_USER
-			FROM SAMPLE
-			WHERE 1=1
-			<if test="searchKeyword != null and searchKeyword != ''">
-		        <choose>
-		            <when test="searchCondition == 0">
-						AND	ID LIKE '%' || #{searchKeyword} || '%'
-					</when>
-		            <when test="searchCondition == 1">
-						AND	NAME LIKE '%' || #{searchKeyword} || '%'
-					</when>
-				</choose>
-			</if>
-			ORDER BY ID ASC
-			LIMIT #{recordCountPerPage} OFFSET #{firstIndex}
-	</select>
-
-	<select id="selectSampleListTotCnt" parameterType="searchVO" resultType="int">
-
-			SELECT COUNT(*) totcnt
-			FROM SAMPLE
-			WHERE 1=1
-			<if test="searchKeyword != null and searchKeyword != ''">
-		        <choose>
-		            <when test="searchCondition == 0">
-						AND ID LIKE '%' || #{searchKeyword} || '%'
-					</when>
-		            <when test="searchCondition == 1">
-						AND	NAME LIKE '%' || #{searchKeyword} || '%'
-					</when>
-				</choose>
-			</if>
-	</select>
+	
 
 </mapper>
