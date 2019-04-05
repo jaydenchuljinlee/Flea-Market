@@ -11,19 +11,16 @@
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav text-uppercase ml-auto">
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#services">Services</a>
+					<a id="myStoreManage" class="nav-link js-scroll-trigger" href="#services">판매하러 가기</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+					<a id="shop" class="nav-link js-scroll-trigger" href="#portfolio">내 상점</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#about">About</a>
+					<a id="fag" class="nav-link js-scroll-trigger" href="#about">FAQ</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#team">Team</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+					<a id="ask" class="nav-link js-scroll-trigger" href="#team">1:1 문의</a>
 				</li>
 			</ul>
 		</div>
