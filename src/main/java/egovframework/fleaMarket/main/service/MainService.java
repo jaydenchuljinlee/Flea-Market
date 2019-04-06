@@ -1,6 +1,7 @@
 package egovframework.fleaMarket.main.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -11,7 +12,7 @@ public interface MainService {
 
 	void test(HttpServletRequest req)throws Exception;
 
-	List<EgovMap> select() throws Exception;
+	Map<String,Object> select() throws Exception;
 
 	
 

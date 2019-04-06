@@ -1,5 +1,7 @@
 package egovframework.fleaMarket.main.service.impl;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -39,10 +41,78 @@ public class MainServiceImpl implements MainService {
 
 	@Override
 	@Cacheable(cacheName="CacheExample")
-	public List<EgovMap> select() throws Exception {
-		logger.debug("캐시테스트");
-		return mainMapper.selectList();
+	public Map<String,Object> select() throws Exception {
+
+		Map<String,Object> map = new HashMap<String,Object>();
+		
+		RecommendPdt recommendPdt	= new RecommendPdt();
+		Category category			= new Category();
+		
+		recommendPdt.start();		
+		category.start();
+		
+		map.put("category", category.list);
+		map.put("recommendPdt", recommendPdt.list);
+		
+		List<ProductVO> pdtList = new ArrayList<ProductVO>();
+		
+		for (int i=0,loop=category.list.size(); i<loop; i++) {
+			
+			pdtList.add(mainMapper.selectCategoryPdt(category.list.get(i)));
+		}
+		
+		map.put("categoryPdt", pdtList);
+		
+		return map;
 	}
+	
+	public class RecommendPdt extends Thread {
+		
+		List<ProductVO> list = new ArrayList<ProductVO>();
+		
+		public RecommendPdt() {
+			
+			setName("Category");
+		}
+		
+		@Override
+		public void run() {
+			
+			try {
+				
+				list = mainMapper.selectRecommenedList();
+			} catch (Exception e) {
+				logger.debug("RecommendPdt :" + e.getMessage());
+			}
+			
+			super.run();
+		}
+	}
+	
+	public class Category extends Thread {
+		
+		List<HashMap<String,Object>> list = new ArrayList<HashMap<String,Object>>();
+		
+		public Category() {
+			
+			setName("Category");
+		}
+		
+		@Override
+		public void run() {
+			
+			try {
+				
+				list = mainMapper.selectCategoryList();
+			} catch (Exception e) {
+				logger.debug("Category :" + e.getMessage());
+			}
+			
+			super.run();
+		}
+	}
+	
+	
 
 
 }

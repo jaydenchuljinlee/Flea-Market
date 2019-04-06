@@ -17,7 +17,15 @@
 		<result property="productContents" column="p_contents"/>
 	</resultMap>
 
-	<select id="selectList" resultType="egovMap">
+	<select id="selectCategoryList" resultType="map">
+		SELECT * FROM payment
+	</select>
+	
+	<select id="selectRecommenedList" resultMap="product">
+		SELECT * FROM payment
+	</select>
+	
+	<select id="selectCategoryPdt" resultMap="product">
 		SELECT * FROM payment
 	</select>
 	

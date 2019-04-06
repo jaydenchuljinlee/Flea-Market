@@ -1,6 +1,7 @@
 package egovframework.fleaMarket.main.web;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -27,7 +28,7 @@ public class MainController {
 	public String main() throws Exception {
 		
 		try {
-			List<EgovMap> selectList = mainService.select();
+			Map<String,Object> selectMap = mainService.select();
 			
 		} catch(Exception e) {
 			logger.info(e.getMessage());
