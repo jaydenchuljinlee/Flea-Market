@@ -18,15 +18,24 @@
 	</resultMap>
 
 	<select id="selectCategoryList" resultType="map">
-		SELECT * FROM payment
+		SELECT * FROM category_a;
 	</select>
 	
 	<select id="selectRecommenedList" resultMap="product">
-		SELECT * FROM payment
+		SELECT pdt.p_no,pdt.p_title,pdt.p_price,pdt.p_date 
+			FROM product pdt 
+			ORDER BY pdt.p_views DESC 
+			LIMIT 8;
+
 	</select>
 	
-	<select id="selectCategoryPdt" resultMap="product">
-		SELECT * FROM payment
+	<select id="selectCategoryPdt" parameterType="String" resultMap="product">
+		SELECT pdt.p_no,pdt.p_title,pdt.p_price,pdt.p_date 
+			FROM product pdt,category_a ca 
+			WHERE ca.ca_code=pdt.ca_code AND pdt.ca_code=0 
+			ORDER BY pdt.p_views DESC 
+			LIMIT 8;
+
 	</select>
 	
 

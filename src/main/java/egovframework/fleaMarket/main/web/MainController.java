@@ -29,7 +29,7 @@ public class MainController {
 		
 		try {
 			Map<String,Object> selectMap = mainService.select();
-			
+			logger.info(selectMap.toString());
 		} catch(Exception e) {
 			logger.info(e.getMessage());
 		}

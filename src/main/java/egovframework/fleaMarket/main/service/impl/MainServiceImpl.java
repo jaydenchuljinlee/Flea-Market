@@ -58,7 +58,7 @@ public class MainServiceImpl implements MainService {
 		
 		for (int i=0,loop=category.list.size(); i<loop; i++) {
 			
-			pdtList.add(mainMapper.selectCategoryPdt(category.list.get(i)));
+			pdtList.add(mainMapper.selectCategoryPdt(category.list.get(i).get("ca_code")));
 		}
 		
 		map.put("categoryPdt", pdtList);
@@ -81,6 +81,7 @@ public class MainServiceImpl implements MainService {
 			try {
 				
 				list = mainMapper.selectRecommenedList();
+				logger.info(list.toString());
 			} catch (Exception e) {
 				logger.debug("RecommendPdt :" + e.getMessage());
 			}
@@ -91,7 +92,7 @@ public class MainServiceImpl implements MainService {
 	
 	public class Category extends Thread {
 		
-		List<HashMap<String,Object>> list = new ArrayList<HashMap<String,Object>>();
+		List<HashMap<String,String>> list = new ArrayList<HashMap<String,String>>();
 		
 		public Category() {
 			
