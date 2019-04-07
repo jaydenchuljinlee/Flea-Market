@@ -17,7 +17,7 @@
 		<result property="productContents" column="p_contents"/>
 	</resultMap>
 
-	<select id="selectCategoryList" resultType="map">
+	<select id="selectCategoryList" resultType="hashmap">
 		SELECT * FROM category_a;
 	</select>
 	

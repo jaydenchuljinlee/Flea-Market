@@ -44,76 +44,25 @@ public class MainServiceImpl implements MainService {
 	public Map<String,Object> select() throws Exception {
 
 		Map<String,Object> map = new HashMap<String,Object>();
-		
-		RecommendPdt recommendPdt	= new RecommendPdt();
-		Category category			= new Category();
-		
-		recommendPdt.start();		
-		category.start();
-		
-		map.put("category", category.list);
-		map.put("recommendPdt", recommendPdt.list);
-		
 		List<ProductVO> pdtList = new ArrayList<ProductVO>();
+		List<HashMap<String,Object>> categoryList = new ArrayList<HashMap<String,Object>>();
 		
-		for (int i=0,loop=category.list.size(); i<loop; i++) {
+		
+		try {
+			pdtList = mainMapper.selectRecommenedList();
+			map.put("recommenedList", pdtList);
+			categoryList = mainMapper.selectCategoryList();
+			map.put("categoryList", categoryList);
+			pdtList = mainMapper.selectCategoryPdt(categoryList.get(0).get("ca_code").toString());
+			map.put("categoryPdt", pdtList);
 			
-			pdtList.add(mainMapper.selectCategoryPdt(category.list.get(i).get("ca_code")));
+		} catch(Exception e) {
+			logger.info(e.getMessage());
 		}
 		
-		map.put("categoryPdt", pdtList);
 		
 		return map;
 	}
-	
-	public class RecommendPdt extends Thread {
-		
-		List<ProductVO> list = new ArrayList<ProductVO>();
-		
-		public RecommendPdt() {
-			
-			setName("Category");
-		}
-		
-		@Override
-		public void run() {
-			
-			try {
-				
-				list = mainMapper.selectRecommenedList();
-				logger.info(list.toString());
-			} catch (Exception e) {
-				logger.debug("RecommendPdt :" + e.getMessage());
-			}
-			
-			super.run();
-		}
-	}
-	
-	public class Category extends Thread {
-		
-		List<HashMap<String,String>> list = new ArrayList<HashMap<String,String>>();
-		
-		public Category() {
-			
-			setName("Category");
-		}
-		
-		@Override
-		public void run() {
-			
-			try {
-				
-				list = mainMapper.selectCategoryList();
-			} catch (Exception e) {
-				logger.debug("Category :" + e.getMessage());
-			}
-			
-			super.run();
-		}
-	}
-	
-	
 
 
 }
