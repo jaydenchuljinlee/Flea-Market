@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,11 +26,14 @@ public class MainController {
 	MainService mainService;
 	
 	@RequestMapping(value = "main.do")
-	public String main() throws Exception {
+	public String main(ModelMap model) throws Exception {
 		
 		try {
 			Map<String,Object> selectMap = mainService.select();
-			logger.info(selectMap.toString());
+			
+			model.addAttribute("recommenedList", selectMap.get("recommenedList"));
+			model.addAttribute("categoryList", selectMap.get("categoryList"));
+			model.addAttribute("categoryPdt", selectMap.get("categoryPdt"));
 		} catch(Exception e) {
 			logger.info(e.getMessage());
 		}

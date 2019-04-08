@@ -47,7 +47,6 @@ public class MainServiceImpl implements MainService {
 		List<ProductVO> pdtList = new ArrayList<ProductVO>();
 		List<HashMap<String,Object>> categoryList = new ArrayList<HashMap<String,Object>>();
 		
-		
 		try {
 			pdtList = mainMapper.selectRecommenedList();
 			map.put("recommenedList", pdtList);
