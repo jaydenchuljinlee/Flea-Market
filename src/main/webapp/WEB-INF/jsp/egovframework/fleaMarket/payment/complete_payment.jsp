@@ -13,6 +13,62 @@
 	};
 </script>
 
-<div class="container mt-5">
-	complete
+<div class="container" style="margin-top:102.66px;">
+	<div class="row mx-auto">
+		<div class="contents col-7 mx-auto mt-4" style="border:1px solid black;">
+			<div>
+				<span>
+					<strong>주문 정보</strong>
+				</span>
+			</div>
+			<div>
+				<div>
+					<span>
+						<strong>주문 번호</strong>
+					</span>
+				</div>
+				<div>
+					<span>
+						<strong>123546233</strong>
+					</span>
+				</div>
+			</div>
+			<div>
+				<div>
+					<span>
+						<strong>총 결제 금액</strong>
+					</span>
+				</div>
+				<div>
+					<span>
+						<strong>3042원</strong>
+					</span>
+				</div>
+			</div>
+			<div>
+				<div>
+					<span>
+						<strong>결제일</strong>
+					</span>
+				</div>
+				<div>
+					<span>
+						<strong>2019.04.29</strong>
+					</span>
+				</div>
+			</div>
+			<div>
+				<div>
+					<span>
+						<strong>구매 목록</strong>
+					</span>
+				</div>
+				<div>
+					<span>
+						<strong>수건</strong>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
