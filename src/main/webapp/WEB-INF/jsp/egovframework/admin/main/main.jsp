@@ -7,6 +7,34 @@
 <div class="row">
 	<div class="col-md-8" id="mainInfoList"> 
 		<div class="col-md-3">
+			<div data-url="adminPay.do?op=wait" class="well bred mainMenu">
+				<h5>전체 회원</h5>
+				<div class="mainRight">
+					<h3>1</h3>
+				</div>
+			</div>
+		</div>
+	
+		<div class="col-md-3">
+			<div data-url="adminPay.do?op=wait" class="well bred mainMenu">
+				<h5>오늘 방문자</h5>
+				<div class="mainRight">
+					<h3>1</h3>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-md-3">
+			<div data-url="adminPay.do?op=wait" class="well bred mainMenu">
+				<h5>오늘 가입자</h5>
+				<div class="mainRight">
+					<h3>1</h3>
+				</div>
+			</div>
+		</div>
+	
+	
+		<div class="col-md-3">
 			<div data-url="adminPay.do?op=wait" class="well borange mainMenu">
 				<h5>입금 대기</h5>
 				<div class="mainRight">
@@ -25,15 +53,6 @@
 		</div>
 		
 		<div class="col-md-3">
-			<div data-url="adminExchange.do?op=wait" class="well blightblue mainMenu">
-				<h5>교환 신청</h5>
-				<div class="mainRight">
-					<h3>1</h3>
-				</div>
-			</div>
-		</div>
-		
-		<div class="col-md-3">
 			<div data-url="adminRefund.do?op=wait" class="well blightblue mainMenu">
 				<h5>환불 신청</h5>
 				<div class="mainRight">
@@ -44,7 +63,7 @@
 		
 		<div class="col-md-3">
 			<div data-url="adminUsedSellRequest.do?op=wait" class="well bviolet mainMenu">
-				<h5>중고 판매 신청</h5>
+				<h5>신고 문의</h5>
 				<div class="mainRight">
 					<h3>1</h3>
 				</div>
