@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<h4 class="pull-left">IT Book 관리자 페이지</h4>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<h4 class="pull-left">TOR MARKET 관리자 페이지</h4>
 <div class="clearfix"></div>
 <hr/>
 
@@ -10,7 +15,7 @@
 			<div data-url="adminPay.do?op=wait" class="well bred mainMenu">
 				<h5>전체 회원</h5>
 				<div class="mainRight">
-					<h3>1</h3>
+					<h3><c:out value="${cardMap.total}"/></h3>
 				</div>
 			</div>
 		</div>
@@ -28,7 +33,7 @@
 			<div data-url="adminPay.do?op=wait" class="well bred mainMenu">
 				<h5>오늘 가입자</h5>
 				<div class="mainRight">
-					<h3>1</h3>
+					<h3><c:out value="${cardMap.today}"/></h3>
 				</div>
 			</div>
 		</div>
@@ -38,7 +43,7 @@
 			<div data-url="adminPay.do?op=wait" class="well borange mainMenu">
 				<h5>입금 대기</h5>
 				<div class="mainRight">
-					<h3>1</h3>
+					<h3><c:out value="${cardMap.deposit}"/></h3>
 				</div>
 			</div>
 		</div>
@@ -47,7 +52,7 @@
 			<div data-url="adminDelivery.do?op=ready" class="well borange mainMenu">
 				<h5>출고 대기</h5>
 				<div class="mainRight">
-					<h3>1</h3>
+					<h3><c:out value="${cardMap.delivery}"/></h3>
 				</div>
 			</div>
 		</div>
@@ -56,7 +61,7 @@
 			<div data-url="adminRefund.do?op=wait" class="well blightblue mainMenu">
 				<h5>환불 신청</h5>
 				<div class="mainRight">
-					<h3>1</h3>
+					<h3><c:out value="${cardMap.refund}"/></h3>
 				</div>
 			</div>
 		</div>

@@ -27,7 +27,7 @@ public class AdminMainController {
 		
 		try {
 			
-			logger.info(cardMap.toString());
+			model.addAttribute("cardMap", cardMap);
 			
 		} catch(Exception e) {
 			logger.info(e.getMessage());
