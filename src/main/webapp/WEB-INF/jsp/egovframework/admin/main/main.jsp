@@ -262,6 +262,13 @@
 	<c:forEach var="list" items="${chartList}">
 	chartList.push({payDate : "${list.payDate}",quantity : "${list.quantity}"});
 	</c:forEach>
+	
+	var date	= new Date();
+	var target	= new Date(chartList[0].payDate); 
+	
+	console.log(date.getDate()-1);
+	console.log(target.getDate());
+	console.log(String(date.getDate()-1) === String(target.getDate()));
 
 </script>
 

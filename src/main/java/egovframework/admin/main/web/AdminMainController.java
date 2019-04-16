@@ -28,31 +28,17 @@ public class AdminMainController {
 	public String initMain(ModelMap model) throws Exception {
 		
 		EgovMap cardMap = adminMainService.selectCardMap();
+		ArrayList<EgovMap> chartList = adminMainService.selectChartList();
 		
 		try {
 			
 			model.addAttribute("cardMap", cardMap);
-			
+			model.addAttribute("chartList", chartList);
 			
 		} catch(Exception e) {
 			logger.info(e.getMessage());
 		}
 		
 		return "main/main.admin";
-	}
-	
-	@RequestMapping(value = "chart_data.do") 
-	@ResponseBody
-	public String chartData() throws Exception{
-		
-		ArrayList<EgovMap> chartList = adminMainService.selectChartList();
-		
-		HashMap<String, Object> resultMap = new HashMap<String, Object>();
-		
-		resultMap.put("result", "SUCCESS");
-		resultMap.put("list", chartList);
-		
-		return JsonUtil.HashMapToJson(resultMap);
-		
 	}
 }
