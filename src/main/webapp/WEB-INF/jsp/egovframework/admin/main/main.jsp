@@ -254,6 +254,17 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+	var chartStr	= "<c:out value='${chartList}'/>";
+	var chartObj	= {};
+	var chartList	= new Array();
+	
+	<c:forEach var="list" items="${chartList}">
+	chartList.push({payDate : "${list.payDate}",quantity : "${list.quantity}"});
+	</c:forEach>
+
+</script>
+
 <!--/ 네비 내용 추가 modal -->
 
 <script type="text/javascript" src="admin/js/Chart.min.js"></script>
