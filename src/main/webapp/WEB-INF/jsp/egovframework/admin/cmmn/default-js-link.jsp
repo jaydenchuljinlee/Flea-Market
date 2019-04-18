@@ -14,11 +14,11 @@
 <script src="admin/js/custom.js"></script>
 
 <!-- Bootstrap -->
-<script src="myStore/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- <script src="myStore/vendors/bootstrap/dist/js/bootstrap.min.js"></script> -->
 <!-- iCheck -->
-<script src="myStore/vendors/iCheck/icheck.min.js"></script>
+<!-- <script src="myStore/vendors/iCheck/icheck.min.js"></script> -->
 <!-- Custom Theme Scripts -->
-<script src="myStore/build/js/custom.min.js"></script>
+<!-- <script src="myStore/build/js/custom.min.js"></script> -->
 
 <script>
 	
@@ -27,8 +27,8 @@
 			var $pageName = $("#" + pageName); // 클릭한 태그를 jQuery 변수인 $pageName에 넣는다.
 			var $has_submenu = $($pageName).closest(".has_submenu"); // 클릭한 태그가 서브 메뉴 유무 확인을 위한 $has_submenu 변수
 			
-			$(".menu").removeClass("current"); // 단일 메뉴 highlight 제거
-			$(".menu").removeClass("active"); // 서브 메뉴 highlight 제거
+			$(".pageMove").removeClass("current"); // 단일 메뉴 highlight 제거
+			$(".pageMove").removeClass("active"); // 서브 메뉴 highlight 제거
 			
 			if($has_submenu.length === 1) { //서브 메뉴를 가지고 있을 경우
 				$has_submenu.addClass("open");
@@ -37,7 +37,8 @@
 				$pageName.addClass("current"); 
 			}
 			
-			$(".menu").click(function() { // .menu 클래스를 가진 태그들의 이벤트리스너
+			$(".pageMove").click(function() { // .menu 클래스를 가진 태그들의 이벤트리스너
+				
 				var menu = $(this).attr("id"); // 내가 클릭한 태그의 속성중의 id의 값을 빼와서 var menu에 넣는다는 것.
 				
 				left.pageSubmitFn(menu);
@@ -45,4 +46,6 @@
 		})
 
 </script>  
-
+<form id="pageFrm">
+	<input type="hidden" id="pageName" name="pageName">
+</form>

@@ -9,7 +9,6 @@
 	<definition name="admin-tiles" 			template="/WEB-INF/jsp/egovframework/admin/cmmn/default-layouts.jsp">
 	  	<put-attribute name="head"    			value="/WEB-INF/jsp/egovframework/admin/cmmn/default-header.jsp" />
 	  	<put-attribute name="left"    			value="/WEB-INF/jsp/egovframework/admin/cmmn/default-left.jsp" />
-	  	<put-attribute name="nav"    			value="/WEB-INF/jsp/egovframework/myStore/cmmn/myStore-nav.jsp" />
 	  	<put-attribute name="content"    		value="" />
 	  	<put-attribute name="footer"    		value="/WEB-INF/jsp/egovframework/myStore/cmmn/myStore-footer.jsp" />
 	  	<put-attribute name="js"    			value="/WEB-INF/jsp/egovframework/admin/cmmn/default-js-link.jsp" />

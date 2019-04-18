@@ -29,10 +29,11 @@
 		<!-- 캘린더에 필요한 css -->
 		<link href="admin/css/fullcalendar.css" rel="stylesheet">
 		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="#">
+		
 		<!-- jQuery -->
 		<script src="admin/js/jquery.js"></script>
 		
 		
-        <form id="pageFrm">
-			<input type="hidden" id="pageName" name="pageName">
-		</form>
+        
