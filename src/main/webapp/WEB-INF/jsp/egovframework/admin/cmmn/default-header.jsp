@@ -10,28 +10,29 @@
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
+		<!-- Bootstrap -->
+	    <link href="myStore/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	    <!-- Font Awesome -->
+	    <link href="myStore/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	    <!-- iCheck -->
+	    <link href="myStore/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+	    <!-- Custom Theme Style -->
+	    <link href="myStore/build/css/custom.min.css" rel="stylesheet">
+	    <!-- jQuery -->
+	    <script src="myStore/vendors/jquery/dist/jquery.min.js"></script>
+		
 		<!-- Styles -->
-		<!-- Bootstrap CSS -->
-		<link href="admin/css/bootstrap.min.css" rel="stylesheet">
 		<!-- jQuery UI -->
-		<link rel="stylesheet" href="admin/css/jquery-ui.css"> 
-		<!-- jQuery Gritter -->
-		<link rel="stylesheet" href="admin/css/jquery.gritter.css">
-		<!-- Font awesome CSS -->
-		<link href="admin/css/font-awesome.min.css" rel="stylesheet">		
+		<link rel="stylesheet" href="admin/css/jquery-ui.css"> 		
 		<!-- Custom CSS -->
 		<link href="admin/css/style.css" rel="stylesheet">
-		<!-- Widgets stylesheet -->
-		<link href="admin/css/widgets.css" rel="stylesheet">
 		<!-- 캘린더에 필요한 css -->
 		<link href="admin/css/fullcalendar.css" rel="stylesheet">
-		   
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="#">
 		
 		<!-- jQuery -->
 		<script src="admin/js/jquery.js"></script>
 		
-		<form id="headerFrm" method="post" action="#">
-	    	<input type="hidden" name="pageHeadName" id="pageHeadName">
+		
+        <form id="pageFrm">
+			<input type="hidden" id="pageName" name="pageName">
 		</form>

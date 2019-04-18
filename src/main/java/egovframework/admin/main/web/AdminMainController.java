@@ -1,9 +1,11 @@
 package egovframework.admin.main.web;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import egovframework.admin.main.service.AdminMainService;
@@ -28,12 +31,12 @@ public class AdminMainController {
 	public String initMain(ModelMap model) throws Exception {
 		
 		EgovMap cardMap = adminMainService.selectCardMap();
-		ArrayList<EgovMap> chartList = adminMainService.selectChartList();
+		HashMap<String,Object> chartMap = adminMainService.selectChartMap("sell");
 		
 		try {
 			
 			model.addAttribute("cardMap", cardMap);
-			model.addAttribute("chartList", chartList);
+			model.addAttribute("chartList", chartMap.get("chartList"));
 			
 		} catch(Exception e) {
 			logger.info(e.getMessage());
@@ -41,4 +44,14 @@ public class AdminMainController {
 		
 		return "main/main.admin";
 	}
+	
+	@RequestMapping(value = "admin_chart.do",method = RequestMethod.POST)
+	@ResponseBody
+	public String adminChart(@RequestBody String param,HttpServletResponse res) throws Exception{
+		
+		HashMap<String,Object> chartMap = adminMainService.selectChartMap(param.replaceAll("\"", ""));
+		
+		return JsonUtil.HashMapToJson(chartMap);
+	}
+	
 }

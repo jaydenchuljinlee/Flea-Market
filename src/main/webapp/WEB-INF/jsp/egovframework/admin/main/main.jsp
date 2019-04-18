@@ -5,8 +5,11 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<h4 class="pull-left">TOR MARKET 관리자 페이지</h4>
-<div class="clearfix"></div>
+
+<div class="row">
+	<h4 class="pull-left">TOR MARKET 관리자 페이지</h4>
+
+</div>
 <hr/>
 
 <div class="row">
@@ -260,15 +263,9 @@
 	var chartList	= new Array();
 	
 	<c:forEach var="list" items="${chartList}">
-	chartList.push({payDate : "${list.payDate}",quantity : "${list.quantity}"});
+		chartList.push({payDate : "${list.payDate}",quantity : "${list.quantity}"});
 	</c:forEach>
 	
-	var date	= new Date();
-	var target	= new Date(chartList[0].payDate); 
-	
-	console.log(date.getDate()-1);
-	console.log(target.getDate());
-	console.log(String(date.getDate()-1) === String(target.getDate()));
 
 </script>
 

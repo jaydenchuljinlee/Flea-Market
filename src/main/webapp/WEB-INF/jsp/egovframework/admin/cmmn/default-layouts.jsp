@@ -4,31 +4,24 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<tiles:insertAttribute name="header"/>
+		<tiles:insertAttribute name="head"/>
 	</head>
-	<body>
-		<tiles:insertAttribute name="nav"/>
-		<!-- Main content starts -->
-		<div class="content">
+	<body class="nav-md">
 		
-			<!-- Sidebar -->
-			<tiles:insertAttribute name="left"/>
-			<!-- Sidebar ends -->
-			
-			<!-- Main bar -->
-			<div class="mainbar">
-				<div class="matter">
-					<div class="container">
-						<tiles:insertAttribute name="content"/>
+		<div class="content body">
+				<tiles:insertAttribute name="left" />
+				<!-- Main bar -->
+				<div class="mainbar">
+					<div class="matter">
+						<div class="container">
+							<tiles:insertAttribute name="content"/>
+						</div>
 					</div>
 				</div>
-			</div>
-			
-			<div class="clearfix"></div>
+				<!-- /page content -->		
+				<tiles:insertAttribute name="footer" />
+				
 		</div> <!--/ Content ends -->
-		<!-- Notification box ends -->
-		<!-- Scroll to top -->
-		<span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span> 
 		
 		<tiles:insertAttribute name="js"/>
 
