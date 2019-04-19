@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	<section class="bg-light" id="portfolio">
-        <div class="container p-3">
+        <div class="container col-6 p-3">
         
             <div class="w-100 title mb-2" style="border-bottom:1px solid #ccc">
                     <span style="font-size:30px">MyStore</span>
                 </div>
             <div class="row form-inline" style="border:1px solid #d9d9d9">
-                <div class="col-lg-4 p-3 text-center" style="background:grey;">
+                <div class="col-lg-4 p-3 text-center" style="background:#d8d6d1;">
                    <div class="w-30 rt">authenticated</div>
                    <div class="w-100 mt-5" style="margin:0 auto">
                         <img class="text-center" src="img/about/1.jpg" style="border-radius: 100%">
@@ -70,12 +70,13 @@
                 
             </div>
             <div class="mt-5">
-                <div class="row tab_menu">
-                    <a class="btn_row_focus col-3 text-center" href="shop.do">판매상품 10</a>
-                    <a class="col-3 text-center btn_row" href="review.do">상점 후기</a>
-                    <a class="col-3 text-center btn_row" href="follower.do">팔로잉 0</a>
-                    <a class="col-3 text-center btn_row" href="#">팔로워 0</a>
-                </div>
+            	<div class="row tab_menu">
+					<a class="col-3 text-center" href="shop.do" style="border:1px solid #ccc;line-height:50px;color:black;font-weight:bold">판매상품 10</a>
+					<a class="col-3 text-center" href="review.do" style="border-bottom:1px solid #ccc;line-height:50px;color:#d0cdc3">상점 후기</a>
+					<a class="col-3 text-center" href="follower.do" style="border-bottom:1px solid #ccc;line-height:50px;color:#d0cdc3">팔로잉 0</a>
+					<a class="col-3 text-center" href="#" style="border-bottom:1px solid #ccc;line-height:50px;color:#d0cdc3">팔로워 0</a>
+				</div>
+
                 <div class="w-100 title mt-5 p-3" style="border-bottom:1px solid #ccc">
                     <span style="font-size:30px">판매상품</span>
                     <span style="font-size:20px;color:red">10</span>

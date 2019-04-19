@@ -32,11 +32,11 @@ public class ShopController {
 
 	@RequestMapping(value = "/shop.do",method = RequestMethod.GET)
 	public String home(HttpServletRequest request,
-			ModelMap model, Authentication auth) throws Exception {
+			ModelMap model/*, Authentication auth*/) throws Exception {
 		System.out.println("shop.do 호출");
 //		UserVO userVo = (UserVO)auth.getPrincipal();
 		
-		HashMap<String, Object> resMap = new HashMap<String,Object>();
+		/*HashMap<String, Object> resMap = new HashMap<String,Object>();
 		
 		resMap.put("user_no", auth.getName());
 		
@@ -46,7 +46,7 @@ public class ShopController {
 		
 		String userName = (String) userList.get(0).get("userName");
 		System.out.println("userList 정보 확인 :"+userList.get(0));
-		model.addAttribute("userName",userName);
+		model.addAttribute("userName",userName);*/
 		
 		return "shop/home.tiles";
 	}

@@ -324,10 +324,10 @@
 							<div class="mt-5">
 								<div class="row">
 									<div class="col-md-6 col-sm-6">
-										<a class="col-md-12 col-sm-12 btn btn-warning" href="#" style="line-height:30px">연락하기</a>
+										<a class="col-md-12 col-sm-12 btn" href="#" style="line-height:30px;background-color:#fed136;color:#fff"">연락하기</a>
 									</div>
 									<div class="col-md-6 col-sm-6">
-										<a class="col-md-12 col-sm-12 btn btn-danger" href="#" style="float:right;line-height:30px">바로구매</a>
+										<a class="col-md-12 col-sm-12 btn" href="#" style="float:right;line-height:30px;background-color:#d8d6d1;color:#fff"">바로구매</a>
 									</div>
 								</div>
 							</div>
