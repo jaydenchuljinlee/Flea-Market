@@ -36,3 +36,6 @@
 <!-- Plugin JavaScript -->
 <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
+<!-- Favicon -->
+		<link rel="shortcut icon" href="#">
+

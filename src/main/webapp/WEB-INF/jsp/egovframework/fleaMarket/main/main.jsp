@@ -5,42 +5,35 @@
 <%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!-- Header -->
-<header class="masthead">
-	<div class="container">
-		<div class="intro-text">
-			<div class="intro-lead-in">Welcome To Our Studio!</div>
-			<div class="intro-heading text-uppercase">It's Nice To Meet You</div>
-			<div class="search-bar row col-6 px-0 mx-auto mb-5 mt-5">
-				<input class="p-2 col-10 px-0" type="text" placeholder="search" style="font-size:30px;border-color:#fec810;border-width:2px 0px 2px 2px;border-style:solid">
-				<div class="p-3 col2 px-0" style="background-color:white;border-color:#fec810;border-width:2px 2px 2px 0px;border-style:solid">
-					<i class="fa fa-search fa-2x" style="color:#fec810"></i>
+
+
+
+<section class="container col-12 py-5 mb-5" style="margin-top:102.66px;">
+	<div class="col-8 px-0 mx-auto row" style="height:350px;">
+		<a class="carousel-control-prev col-1 px-0 h-30 my-auto" href="#carouselExampleIndicators" role="button" data-slide="prev" style="position:relative;">
+			<span class="fa fa-chevron-left fa-3x" aria-hidden="true" style="color:#fed136;"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<div id="carouselExampleIndicators" class="carousel col-10 slide h-100 px-0" data-ride="carousel" data-interval="false">
+			<div class="carousel-inner row h-100 mx-0" role="listbox">
+				<!-- Slide One - Set the background image for this slide in the line below -->
+				<div class="carousel-itemactive h-100">
+					<img class="w-100 h-100" src="img/main/main_banner_1.jpg">
 				</div>
-			</div>
-			<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
+				<div class="carousel-itemactive h-100">
+					<img class="w-100 h-100" src="img/main/main_banner_2.jpg">
+				</div>
+			</div>  
 		</div>
+		<a class="carousel-control-next col-1 px-0 h-30 my-auto" href="#carouselExampleIndicators" role="button" data-slide="next" style="position:relative;">
+			<span class="fa fa-chevron-right fa-3x" aria-hidden="true" style="color:#fed136"></span>
+			<span class="sr-only">Next</span>
+		</a>
 	</div>
-</header>
+</section>
 
 <section class="pt-0 mt-2">
 	<div class="container-fuild">
-		<!-- <div class="col-6 px-0 mx-auto row mt-5">
-			<div id="carouselExampleIndicators"data-ride="carousel" data-interval="false" style="height:350px;">
-				<div class="carousel-inner row mx-0 h-100" role="listbox">
-					Slide One - Set the background image for this slide in the line below
-					<div class="carousel-itemactive h-100">
-						<img class="w-100 h-100" src="img/header-bg.jpg">
-					</div>
-				</div>  
-			</div>
-			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-				<span class="fa fa-chevron-left fa-3x" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-				<span class="fa fa-chevron-right fa-3x" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div> -->
 	
 		<div class="col-12 mx-auto px-0 pt-5 pb-5" style="background-color:#f9f9f9">
 			<div class="col-7 pl-5 mx-auto">

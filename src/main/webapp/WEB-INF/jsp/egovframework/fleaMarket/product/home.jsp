@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- Portfolio Grid -->
 <section class="bg-light" id="portfolio">
-	<div class="container">
+	<div class="container col-6">
 		<div class="row category_field mb-3">
 			<i class="fa fa-home m-2"> 홈</i>
 			<i class="fa fa-chevron-right m-2"></i>
@@ -19,21 +19,21 @@
 		</div>
 		<hr class="row mb-3" style="border:1;height:1px;background:#ccc" />
 		<div class="row form-inline" style="border:0px solid #d9d9d9">
-			<div class="col-lg-4 text-center" style="background:grey;height:400px;">
-				<div class="w-30 mt-5" style="margin:0 auto">
+			<div class="col-lg-3 mx-4 text-center" style="background:#d8d6d1;height:300px;">
+				<div class="w-30 mt-5 mx-auto">
 					<img class="w-100 text-center" src="resources/img/shop/shop_img_1.jpg" style="border-radius: 100%">
 				</div>
 			</div>
-			<div class="col-lg-8" style="height:400px;">
-				<div class="w-100 mt-2">
+			<div class="col-lg-8" style="height:300px;">
+				<div class="w-100 pt-1">
 					<span style="font-size:25px">Prouduct Name</span>
-					<a class="ml-3" style="border:1px solid #e8e8e8;border-radius: 10%;font-size:5px">update</a>
-					<span style="float:right;border-radius: 10%;background-color:#fed136;color:white;font-size:10px;">authenticated</span>
+					<span class="ml-3 p-2" style="border:1px solid #e8e8e8;border-radius: 10%;font-size:10px">update</span>
+					<span class="p-2" style="float:right;border-radius: 10%;background-color:#fed136;color:white;font-size:10px;">authenticated</span>
 				</div>
-				<div class="w-100 mt-4">
-					<span style="font-size:35px">21,000<small>원</small></span>
+				<div class="w-100 pt-2">
+					<span style="font-size:25px">21,000<small>원</small></span>
 				</div>
-				<div class="w-100 mt-3 p-2" style="border-top:1px solid #d9d9d9;">
+				<div class="w-100 mt-1 p-2" style="border-top:1px solid #d9d9d9;">
 					<div class="ml-2">
 						<i class="fas fa-heart"></i>
 						<span class="">2</span>
@@ -45,52 +45,52 @@
 						<span class="">5시간 전</span>
 						<a class="" href="#" style="float:right;color:black"><i class="fas fa-exclamation-circle"></i> 신고하기</a>
 					</div>
-					<div class="mt-4 ml-2">
+					<div class="mt-2 ml-2">
 						<div class="row">
 							<div class="col-md-2 col-sm-2">
-								<span style="font-size:12px">상품상태</span>
+								<span>상품상태</span>
 							</div>
 							<div class="col-md-10 col-sm-10">
-								<span style="font-size:12px">중고</span>
+								<span>중고</span>
 							</div>
 						</div>
-						<div class="row mt-2">
+						<div class="row pt-1">
 							<div class="col-md-2 col-sm-2">
-								<span style="font-size:12px">교환여부</span>
+								<span>교환여부</span>
 							</div>
 							<div class="col-md-10 col-sm-10">
-								<span style="font-size:12px">교환불가능</span>
+								<span>교환불가능</span>
 							</div>
 						</div>
-						<div class="row mt-2">
+						<div class="row pt-1">
 							<div class="col-md-2 col-sm-2">
-								<span style="font-size:12px">배송비</span>
+								<span>배송비</span>
 							</div>
 							<div class="col-md-10 col-sm-10">
-								<span style="font-size:12px">무료배송</span>
+								<span>무료배송</span>
 							</div>
 						</div>
-						<div class="row mt-2">
+						<div class="row pt-1">
 							<div class="col-md-2 col-sm-2">
-								<span style="font-size:12px">거래지역</span>
+								<span>거래지역</span>
 							</div>
 							<div class="col-md-10 col-sm-10">
-								<span style="font-size:12px"><i class="fas fa-check-circle"></i> 전국</span>
+								<span><i class="fas fa-check-circle"></i> 전국</span>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="w-100 mt-4 p-2">
+				<div class="w-100 pt-1 p-2">
 					<div class="ml-2">
 						<div class="row">
 							<div class="col-md-4 col-sm-4">
-								<a class="col-md-12 col-sm-12 btn btn-secondary" href="#" style="line-height:30px"><i class="fas fa-heart"></i> 찜 4</a>
+								<a class="col-md-12 col-sm-12 btn" href="#" style="line-height:30px;;background-color:#f7b6f3cc;color:#fff"><i class="fas fa-heart"></i> 찜 </a>
 							</div>
 							<div class="col-md-4 col-sm-4">
-								<a class="col-md-12 col-sm-12 btn btn-warning" href="#" style="line-height:30px">연락하기</a>
+								<a class="col-md-12 col-sm-12 btn" href="#" style="line-height:30px;background-color:#fed136;color:#fff">연락하기</a>
 							</div>
 							<div class="col-md-4 col-sm-4">
-								<a class="col-md-12 col-sm-12 btn btn-danger" href="#" style="float:right;line-height:30px">바로구매</a>
+								<a class="col-md-12 col-sm-12 btn" href="#" style="float:right;line-height:30px;background-color:#d8d6d1;color:#fff">바로구매</a>
 							</div>
 						</div>
 						<!-- <a class="w-30 btn btn-secondary" href="#" style="line-height:30px"><i class="fas fa-heart"></i> 찜 4</a>
@@ -100,7 +100,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row mt-5">
+		<div class="col-12 form-inline mt-5">
 			<span style="font-size:20px;font-weight:bold">연관상품</span>
 			<span style="font-size:20px;font-weight:bold">1/4</span>
 		</div>
