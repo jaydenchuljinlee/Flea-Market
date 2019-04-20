@@ -34,10 +34,6 @@ h1, h2, h3, h4, h5, h6 {
 		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
 }
 
-section {
-	padding: 100px 0
-}
-
 section h2.section-heading {
 	font-size: 40px;
 	margin-top: 0;

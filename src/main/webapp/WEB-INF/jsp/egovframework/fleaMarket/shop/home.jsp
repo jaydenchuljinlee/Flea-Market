@@ -43,11 +43,11 @@
                         <a class="ml-3 p-1" style="border:1px solid #e8e8e8;border-radius: 10%;font-size:5px">이름수정</a>
 
                     </div>
-                    <div class="w-100 mt-4 p-2 border_line">
-                        <span class="ml-2 mr-3"><i class="fa fa-dumpster orange"></i>상점오픈일 127일</span>
-                        <span class="ml-2 mr-3"><i class="fa fa-walking yellow"></i>상점방문수 8명</span>
-                        <span class="ml-2 mr-3"><i class="fa fa-shopping-cart green"></i>상품판매 15회</span>
-                        <span class="ml-2 mr-3"><i class="fa fa-car blue"></i>상품발송 15회</span>
+                    <div class="w-100 mt-4 p-1 border_line">
+                        <span class="ml-1 mr-2"><i class="fa fa-dumpster orange"></i>상점오픈일 127일</span>
+                        <span class="ml-1 mr-2"><i class="fa fa-walking yellow"></i>상점방문수 8명</span>
+                        <span class="ml-1 mr-2"><i class="fa fa-shopping-cart green"></i>상품판매 15회</span>
+                        <span class="ml-1 mr-2"><i class="fa fa-car blue"></i>상품발송 15회</span>
                     </div>
                     <form>
                     <div class="form-group">
