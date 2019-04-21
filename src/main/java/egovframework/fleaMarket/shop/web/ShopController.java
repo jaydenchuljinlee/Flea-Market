@@ -33,7 +33,7 @@ public class ShopController {
 	@RequestMapping(value = "/shop.do",method = RequestMethod.GET)
 	public String home(HttpServletRequest request,
 			ModelMap model/*, Authentication auth*/) throws Exception {
-		System.out.println("shop.do 호출");
+		//System.out.println("shop.do 호출");
 //		UserVO userVo = (UserVO)auth.getPrincipal();
 		
 		/*HashMap<String, Object> resMap = new HashMap<String,Object>();
