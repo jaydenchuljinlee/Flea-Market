@@ -35,4 +35,22 @@
 			WHERE p.u_no = 4
 	</select>
 	
+	<select id="selectShopReviewsList" parameterType="string" resultType="hashMap">
+		SELECT *
+			FROM reviews rv
+			WHERE rv.u_no = 4;
+	</select>
+	
+	<select id="selectFollowing" parameterType="string" resultType="string">
+		SELECT f.following
+			FROM follow f
+			WHERE f.follower = 4;
+	</select>
+	
+	<select id="selectFollower" parameterType="string" resultType="string">
+		SELECT f.follower
+			FROM follow f
+			WHERE f.following = 4;
+	</select>
+	
 </mapper>

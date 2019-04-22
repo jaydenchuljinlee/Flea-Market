@@ -1,31 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-	<section class="bg-light" id="portfolio">
+	<section class="" id="portfolio">
         <div class="container col-6 p-3">
         
             <div class="w-100 title mb-2" style="border-bottom:1px solid #ccc">
-                    <span style="font-size:30px">MyStore</span>
+                    <span style="font-size:30px;color:#7a7d80"><b><i class="fa fa-home">내 상점</i></b></span>
                 </div>
             <div class="row form-inline" style="border:1px solid #d9d9d9">
-                <div class="col-lg-4 p-3 text-center" style="background:#d8d6d1;">
+                <div class="col-lg-4 p-3 text-center" style="background:#ecebe7;">
                    <div class="w-30 rt">authenticated</div>
                    <div class="w-100 mt-5" style="margin:0 auto">
                         <img class="text-center" src="img/about/1.jpg" style="border-radius: 100%">
                     </div>
                     <div class="w-60 mt-4 mb-4" style="margin:0 auto">
-                        <div style="color:white">상점 이름: Shop 
+                        <div><span><b>No: 23045</b></span> 
                         <c:out value="${userName}"/></div>
                         <div>
                             <i class="fas fa-star yellow"></i>
                             <i class="fas fa-star yellow"></i>
                             <i class="fas fa-star yellow"></i>
-                            <i class="far fa-star white"></i>
-                            <i class="far fa-star white"></i>
-                            <span class="white">(3.0)</span>
+                            <i class="far fa-star yellow"></i>
+                            <i class="far fa-star yellow"></i>
+                            <span><b>(3.0)</b></span>
                         </div>
                         <div>
-                            <i class="fas fa-crown white"></i><span class="white">판매자등급</span>
-                            <i class="fas fa-eye white ml-3"></i><span class="white">20</span>
+                            <i class="fas fa-crown yellow"></i><span><b>판매자등급</b></span>
                         </div>
                         
                     </div>
@@ -35,46 +34,46 @@
                 </div>
                 <div class="col-lg-8" style="height: auto">
                    <div class="w-100">
-                        <div class="btn btn_rt"><i class="fas fa-heart mr-1"></i>팔로우하기</div>
-                        <div class="btn btn_rt">문의하기</div>
+                   		<div class="btn btn_rt" style="color:#7a7d80"><i class="fas fa-eye ml-3">20</i></div>
+                        <div class="btn btn_rt" style="color:#7a7d80"><i class="fas fa-heart mr-1">팔로우하기</i></div>
                     </div>
-                    <div class="w-100 mt-5">
-                        <span style="font-size:25px">상점 이름: Shop No.211234</span>
-                        <a class="ml-3 p-1" style="border:1px solid #e8e8e8;border-radius: 10%;font-size:5px">이름수정</a>
+                    <div class="w-100 mt-5" style="color:#7a7d80">
+                        <span style="font-size:25px"><b>상점 이름</b></span>
+                        <a class="ml-3 p-1 my-auto" style="border:1px solid #e8e8e8;border-radius: 10%;font-size:15px">update</a>
 
                     </div>
-                    <div class="w-100 mt-4 p-2 border_line">
-                        <span class="ml-1 mr-3"><i class="fa fa-dumpster orange"></i>상점오픈일 127일</span>
-                        <span class="ml-1 mr-3"><i class="fa fa-walking yellow"></i>상점방문수 8명</span>
-                        <span class="ml-1 mr-3"><i class="fa fa-shopping-cart green"></i>상품판매 15회</span>
-                        <span class="ml-1 mr-3"><i class="fa fa-car blue"></i>상품발송 15회</span>
+                    <div class="w-100 mt-4 p-2 border_line" style="color:#7a7d80">
+                        <i class="fa fa-dumpster ml-1 mr-2">상점오픈일 127일</i>
+                        <i class="fa fa-walking ml-1 mr-2">상점방문수 8명</i>
+                        <i class="fa fa-shopping-cart ml-1 mr-2">상품판매 15회</i>
+                        <i class="fa fa-car ml-1">상품발송 15회</i>
                     </div>
                     <form>
                     <div class="form-group">
-    <textarea class="form-control w-100 mt-3" rows="8">
-직거래는 안해여 🙅🏻‍♀️🙅🏻‍♀️🙅🏻‍♀️🙅🏻‍♀️
-교신도 안받구요
-사실분들만연락주세용
+    <p class="form-control w-100 mt-3" style="height:200px;overflow-y:scroll">
+직거래는 안해여 🙅🏻‍♀️🙅🏻‍♀️🙅🏻‍♀️🙅🏻‍♀️<br>
+교신도 안받구요<br>
+사실분들만연락주세용<br><br>
 
-분실책임안져요
-입금순입니다 
-환불안되요 구매전 꼼꼼이확인부탁드려요
+분실책임안져요<br>
+입금순입니다 <br>
+환불안되요 구매전 꼼꼼이확인부탁드려요<br><br>
 
-저는 매너없게 거래하시는 분들은 
-차단합니다 
+저는 매너없게 거래하시는 분들은 <br>
+차단합니다 <br>
 기분좋게거래합시다♥️
-    </textarea>
+    </p>
   </div>
                    </form>
                 </div>
                 
             </div>
             <div class="mt-5">
-            	<div class="row tab_menu">
-					<a class="col-3 text-center" href="shop.do" style="border:1px solid #ccc;line-height:50px;color:black;font-weight:bold">판매상품 10</a>
-					<a class="col-3 text-center" href="review.do" style="border-bottom:1px solid #ccc;line-height:50px;color:#d0cdc3">상점 후기</a>
-					<a class="col-3 text-center" href="follower.do" style="border-bottom:1px solid #ccc;line-height:50px;color:#d0cdc3">팔로잉 0</a>
-					<a class="col-3 text-center" href="#" style="border-bottom:1px solid #ccc;line-height:50px;color:#d0cdc3">팔로워 0</a>
+            	<div class="row">
+					<a data-target="product_list" class="col-3 text-center tab_menu" style="border:1px solid #ccc;line-height:50px;color:black;font-weight:bold">판매상품 10</a>
+					<a data-target="shop_reviews" class="col-3 text-center tab_menu" style="border-bottom:1px solid #ccc;line-height:50px;color:#d0cdc3">상점 후기</a>
+					<a data-target="following" class="col-3 text-center tab_menu" style="border-bottom:1px solid #ccc;line-height:50px;color:#d0cdc3">팔로잉 0</a>
+					<a data-target="follower" class="col-3 text-center tab_menu" style="border-bottom:1px solid #ccc;line-height:50px;color:#d0cdc3">팔로워 0</a>
 				</div>
 
                 <div class="w-100 title mt-5 p-3" style="border-bottom:1px solid #ccc">
@@ -205,4 +204,27 @@
         </div>
     </section>
 
-
+<script>
+	$(function() {
+		$(".tab_menu").on("click", function() {
+			
+			var param = {
+					target	: $(this).data("target"),
+					user	: "4"
+			}
+			$.ajax({
+				type		: "post",
+				url			: "shop_tab.do",
+				data		: JSON.stringify(param),
+				contentType	: "application/json",
+				success	: function(data) {
+					console.log(data);
+				},
+				error		: function(error) {
+					console.log(error);
+				}
+				
+			})
+		})
+	})
+</script>

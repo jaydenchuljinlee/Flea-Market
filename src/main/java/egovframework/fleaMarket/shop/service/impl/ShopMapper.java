@@ -17,4 +17,10 @@ public interface ShopMapper {
 
 	ArrayList<HashMap<String, Object>> selectProductList(String param) throws Exception;
 
+	ArrayList<HashMap<String, Object>> selectShopReviewsList(String param) throws Exception;
+
+	String selectFollowing(String param) throws Exception;
+
+	String selectFollower(String param) throws Exception;
+
 }

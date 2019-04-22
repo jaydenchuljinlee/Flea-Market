@@ -22,7 +22,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import egovframework.fleaMarket.cmmn.service.JsonUtil;
 import egovframework.fleaMarket.login.service.UserVO;
 import egovframework.fleaMarket.shop.service.ShopService;
 import egovframework.rte.psl.dataaccess.util.EgovMap;
@@ -45,15 +47,13 @@ public class ShopController {
 		return "shop/home.tiles";
 	}
 	
-	@RequestMapping(value = "/review.do",method = RequestMethod.GET)
-	public String review() throws Exception {
+	@RequestMapping(value = "/shop_tab.do",method = RequestMethod.POST)
+	@ResponseBody
+	public String product_list(@RequestBody String param) throws Exception {
 		
-		return "shop/review.tiles";
-	}
-	@RequestMapping(value = "/follower.do",method = RequestMethod.GET)
-	public String follower() throws Exception {
+		HashMap<String,Object> map = shopService.selectShopTab(param);
 		
-		return "shop/follower.tiles";
+		return JsonUtil.HashMapToJson(map);
 	}
 	
 }

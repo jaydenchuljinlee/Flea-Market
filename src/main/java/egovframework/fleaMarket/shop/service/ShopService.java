@@ -13,4 +13,6 @@ public interface ShopService {
 
 	ArrayList<Object> selectHomeList(String param) throws Exception;
 
+	HashMap<String, Object> selectShopTab(String param) throws Exception;
+
 }
