@@ -23,4 +23,16 @@
 		order by user_no
 	</select>
 	
+	<select id="selectShop" parameterType="string" resultType="hashMap">
+		SELECT * 
+			FROM shop s
+			WHERE s.u_no = 4;
+	</select>
+	
+	<select id="selectProductList" parameterType="string" resultType="hashMap">
+		SELECT p.p_title, p.p_price, p.p_date, p.p_area
+			FROM product p
+			WHERE p.u_no = 4
+	</select>
+	
 </mapper>

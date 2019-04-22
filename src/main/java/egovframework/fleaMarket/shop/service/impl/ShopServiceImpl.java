@@ -1,5 +1,6 @@
 package egovframework.fleaMarket.shop.service.impl;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.annotation.Resource;
@@ -22,6 +23,20 @@ public class ShopServiceImpl implements ShopService {
 	public List<EgovMap> selectUserList(HashMap<String, Object> param) throws Exception {
 		// TODO Auto-generated method stub
 		return shopMapper.selectUserList(param);
+	}
+
+	@Override
+	public ArrayList<Object> selectHomeList(String param) throws Exception {
+		
+		HashMap<String, Object> shop = shopMapper.selectShop(param);
+		ArrayList<HashMap<String,Object>> productList = shopMapper.selectProductList(param);
+		
+		ArrayList<Object> rtnList = new ArrayList<Object>();
+		
+		rtnList.add(shop);
+		rtnList.add(productList);
+		
+		return rtnList;
 	}
 	
 

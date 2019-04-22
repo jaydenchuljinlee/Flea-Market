@@ -2,6 +2,7 @@ package egovframework.fleaMarket.shop.web;
 
 import java.io.PrintWriter;
 import java.net.URLDecoder;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
@@ -11,6 +12,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -26,27 +29,18 @@ import egovframework.rte.psl.dataaccess.util.EgovMap;
 
 @Controller
 public class ShopController {
+	private static final Logger logger = LoggerFactory.getLogger(ShopController.class);
 	
 	@Resource(name = "shopService")
 	private ShopService shopService;
 
 	@RequestMapping(value = "/shop.do",method = RequestMethod.GET)
-	public String home(HttpServletRequest request,
-			ModelMap model/*, Authentication auth*/) throws Exception {
-		//System.out.println("shop.do 호출");
-//		UserVO userVo = (UserVO)auth.getPrincipal();
+	public String home(@RequestParam(required=false) String param,ModelMap model) throws Exception {
 		
-		/*HashMap<String, Object> resMap = new HashMap<String,Object>();
+		ArrayList<Object> list = shopService.selectHomeList(param);
 		
-		resMap.put("user_no", auth.getName());
-		
-		List<EgovMap> userList = 
-				shopService.selectUserList(resMap);	
-		System.out.println(userList);
-		
-		String userName = (String) userList.get(0).get("userName");
-		System.out.println("userList 정보 확인 :"+userList.get(0));
-		model.addAttribute("userName",userName);*/
+		logger.info(list.get(0).toString());
+		logger.info(list.get(1).toString());
 		
 		return "shop/home.tiles";
 	}
