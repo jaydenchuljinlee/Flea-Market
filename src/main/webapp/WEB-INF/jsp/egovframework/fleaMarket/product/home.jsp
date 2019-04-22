@@ -159,14 +159,14 @@
 		</div>
 		
 		<div class="mt-5">
-			<div class="row tab_menu">
-				<a class="col-4 text-center" href="#" style="border:1px solid #ccc;line-height:50px;color:black;font-weight:bold">상품정보</a>
-				<a class="col-4 text-center" href="#" style="border:1px solid #ccc;line-height:50px;color:black;font-weight:bold">상품문의(1)</a>
-				<a class="col-4 text-center" href="#" style="border-bottom:1px solid #ccc;line-height:50px;"></a>
+			<div class="row">
+				<a data-target="p_info" class="col-4 text-center tab_menu" href="#p_info" style="border:1px solid #ccc;line-height:50px;color:black;font-weight:bold">상품정보</a>
+				<a data-target="p_qna" class="col-4 text-center tab_menu" href="#p_qna" style="border:1px solid #ccc;line-height:50px;color:black;font-weight:bold">상품문의</a>
+				<a data-target="shop_info" class="col-4 text-center tab_menu" href="#shop_info" style="border:1px solid #ccc;line-height:50px;color:black;font-weight:bold">상점정보</a>
 			</div>
 			
-			<div class="form-inline" style="border:0px solid #d9d9d9">
-				<div class="col-lg-8">
+			<div class="tab_list" style="border:0px solid #d9d9d9;">
+				<div id="p_info" class="col-lg-10 tab_content tab_current">
 					<div class="w-100 mt-5">
 						<span style="font-size:20px;font-weight:bold">상품정보</span>
 					</div>
@@ -195,6 +195,10 @@
 							</div>
 						</div>
 					</div>
+				</div>
+				
+				
+				<div id="p_qna" class="col-lg-10 tab_content">
 					<div class="w-100 mt-4 p-2">
 						<span style="font-size:20px;font-weight:bold">상품문의</span>
 						<span style="font-size:20px;color:red">1</span>
@@ -252,7 +256,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4" style="height:808px">
+				
+				<div id="shop_info" class="col-lg-10 tab_content" style="height:808px">
 					<div class="w-100">
 						<span style="font-size:20px;font-weight:bold">상점정보</span>
 					</div>
@@ -333,6 +338,23 @@
 					</div>
 				</div>
 			</div>
+					
+					
+					
+				
+			</div>
 		</div>
-	</div>
 </section>
+
+<script>
+	$(function() {
+		$(".tab_menu").on("click",function() {
+			var target = $(this).data("target");
+			console.log(target);
+			$(".tab_content").removeClass("tab_current");
+			$("#"+target).addClass("tab_current");
+		})
+		
+		
+	})
+</script>

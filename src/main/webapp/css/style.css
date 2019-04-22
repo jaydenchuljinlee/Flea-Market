@@ -218,3 +218,14 @@ w-80 {
     height: 100%;
     object-fit: cover;
 }
+
+.tab_content {
+	display:none;
+}
+
+.tab_content.tab_current {
+	display:block;
+}
+
+
+
