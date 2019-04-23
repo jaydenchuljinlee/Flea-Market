@@ -13,7 +13,7 @@
                         <img class="text-center" src="img/about/1.jpg" style="border-radius: 100%">
                     </div>
                     <div class="w-60 mt-4 mb-4" style="margin:0 auto">
-                        <div><span><b>No: 23045</b></span> 
+                        <div><span style="color:#7a7d80"><b>No: 23045</b></span> 
                         <c:out value="${userName}"/></div>
                         <div>
                             <i class="fas fa-star yellow"></i>
@@ -21,10 +21,10 @@
                             <i class="fas fa-star yellow"></i>
                             <i class="far fa-star yellow"></i>
                             <i class="far fa-star yellow"></i>
-                            <span><b>(3.0)</b></span>
+                            <span style="color:#7a7d80"><b>(3.0)</b></span>
                         </div>
                         <div>
-                            <i class="fas fa-crown yellow"></i><span><b>판매자등급</b></span>
+                            <i class="fas fa-crown yellow"></i><span style="color:#7a7d80"><b>판매자등급</b></span>
                         </div>
                         
                     </div>
