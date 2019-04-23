@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.fleaMarket.product.service.impl.ProductMapper">
+
+
+	<select id="selectOneItem" parameterType="string" resultType="hashmap">
+		SELECT p.p_no,p.p_title,p.p_price,p.p_date,p.p_trade,p.p_views,p.p_area,p.p_contents,p.p_tag,p.ca_code,p.cb_code 
+			FROM product p 
+			WHERE p.p_no = 1
+	</select>
+	
+	<select id="selectRelatedList" parameterType="string" resultType="hashmap">
+		SELECT p.p_title, p.p_price 
+			FROM product p,(SELECT p.cb_code 
+				FROM product p WHERE p.p_no = 1) related
+			WHERE p.cb_code = related.cb_code
+	</select>
+	
+	<select id="selectShop" parameterType="string" resultType="hashmap">
+		
+	</select>
+	
+
+</mapper>

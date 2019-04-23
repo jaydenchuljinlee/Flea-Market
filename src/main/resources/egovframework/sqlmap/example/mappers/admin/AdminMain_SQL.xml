@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.admin.main.service.impl.AdminMainMapper">
+
+	<select id="selectCardMap" resultType="egovMap">
+		SELECT today.today,total.total,deposit.deposit,refund.refund,delivery.delivery
+			FROM
+				(SELECT COUNT(u.user_no) today FROM user u WHERE u.user_join_date = DATE(NOW())) today,
+				(SELECT COUNT(u.user_no) total FROM user u) total,
+				(SELECT COUNT(ps.pay_no) deposit FROM payment_statement ps WHERE ps.pay_state = 0) deposit,
+				(SELECT COUNT(pc.pay_no) refund FROM payment_cancel pc WHERE pc.pay_cancel_state = 0) refund,
+				(SELECT COUNT(ps.pay_no) delivery FROM payment_statement ps WHERE ps.pay_state = 2) delivery
+	</select>
+	
+	<select id="selectSellChartList"  resultType="map">
+		SELECT p.pay_date, COUNT(p.pay_date) quantity
+			FROM payment p
+			WHERE DATE(p.pay_date) > DATE(SUBDATE(NOW(),INTERVAL 7 DAY))
+			GROUP BY p.pay_date
+			ORDER BY p.pay_date desc;
+	</select>
+	
+	<select id="selectJoinChartList" resultType="map">
+		SELECT u.user_join_date, COUNT(u.user_join_date) join_quantity
+			FROM user u
+			WHERE DATE(u.user_join_date) > DATE(SUBDATE(NOW(),INTERVAL 7 DAY))
+			GROUP BY u.user_join_date 
+			ORDER BY u.user_join_date desc;
+	</select>
+	
+	<select id="selectWithdrawChartList" resultType="map">
+		SELECT u.user_withdraw_date, COUNT(u.user_withdraw_date) withdraw_quantity
+			FROM user u
+			WHERE DATE(u.user_withdraw_date) > DATE(SUBDATE(NOW(),INTERVAL 7 DAY))
+			GROUP BY u.user_withdraw_date 
+			ORDER BY u.user_withdraw_date desc;
+	</select>
+	
+	
+
+</mapper>

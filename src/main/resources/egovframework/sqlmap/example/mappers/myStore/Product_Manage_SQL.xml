@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.myStore.manage.service.impl.ProductManageMapper">
+	
+	<select id="selectProductList" parameterType="string" resultType="hashMap">
+		SELECT p.ps_code, p.p_title, p.p_price, COUNT(rv.p_no) review, p.p_date
+			FROM product p, reviews rv
+			WHERE p.u_no = rv.u_no AND p.u_no = 4;
+	</select>
+</mapper>
