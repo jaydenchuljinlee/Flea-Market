@@ -85,7 +85,7 @@
 								<a class="col-md-12 col-sm-12 btn" href="#" style="line-height:30px;;background-color:#f7ccdacc;color:#fff"><i class="fas fa-heart"></i> 찜 </a>
 							</div>
 							<div class="col-md-4 col-sm-4">
-								<a class="col-md-12 col-sm-12 btn" href="#" style="line-height:30px;background-color:#f7d665ad;color:#fff">연락하기</a>
+								<a class="col-md-12 col-sm-12 btn" href="#" data-toggle="modal" data-target="#talk" style="line-height:30px;background-color:#f7d665ad;color:#fff">연락하기</a>
 							</div>
 							<div class="col-md-4 col-sm-4">
 								<a class="col-md-12 col-sm-12 btn" href="#" style="float:right;line-height:30px;background-color:#d8d6d1;color:#fff">바로구매</a>
@@ -344,10 +344,43 @@
 				
 			</div>
 		</div>
+		<div class="modal fade" id="talk" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top:150px;margin-left:200px">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content" style="height:400px;width:300px;">
+		      <div class="modal-header h-15">
+		     	 <span style="font-size:20px;"><b>talk</b></span>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		      </div>
+		      <div class="modal-body h-85 p-0">
+		      	<div class="message-content col-12 h-85 px-2 py-0">
+		      		 <div class="col-12 send-message text-right px-0 my-3">
+		        		<span class="p-2" style="background-color:#b7d2ec;border-radius: 10px"><b>안녕하세요</b></span>
+			        </div>
+			        <div class="col-12 receive-message float-left px-0 my-3">
+			        	<span class="p-2" style="background-color:#ffc107a1;border-radius: 10px"><b>네 안녕하세요</b></span>
+			        </div>
+		      	</div>
+		        <div class="input-message col-12 form-inline h-15 px-0 py-0">
+		        	<input class="col-10 px-0 py-2" type="text" value="채팅을 입력.." style="border-width:1px 1px 1px 0px;border-style:solid;border-color:#e9ecef;">
+		        	<button class="col-2 px-0 py-2" style="border-width:1px 0px 1px 0px;border-style:solid;border-color:#e9ecef;">입력</button>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+
 </section>
+
+
 
 <script>
 	$(function() {
+		 $("#myButtons1").click(function(){
+	           alert('AJAX로 처리하고 정상 응답이면.. hide 해 준다.');
+	     $("#talk").modal("hide")
+	        });
+		
 		$(".tab_menu").on("click",function() {
 			var target = $(this).data("target");
 			console.log(target);

@@ -908,9 +908,6 @@ a {
 	background-color: transparent
 }
 
-.top_search {
-	padding: 0
-}
 
 .top_search .form-control {
 	box-shadow: inset 0 1px 0 rgba(0, 0, 0, .075);

@@ -29,4 +29,60 @@
 				seller.user_no = p.u_no AND
 				p.u_no = 4;
 	</select>
+	
+	<select id="selectPurchaseSearchList" parameterType="hashMap" resultType="hashMap">
+		SELECT u.user_no,buyer.user_no, p.p_title, pay.pay_price, pay.pay_date, pay.pay_state_code, cancel.pay_cancel_date
+			FROM  user u,
+				(SELECT buyer.user_no,buyer.user_id 
+					FROM user buyer 
+					WHERE buyer.user_no = 2) buyer,product p,payment pay 
+				LEFT OUTER JOIN payment_cancel cancel 
+				ON pay.pay_no = cancel.pay_no
+			WHERE u.user_no = p.u_no AND 
+				p.p_no = pay.p_no AND 
+				buyer.user_no = pay.u_no AND 
+				pay.u_no = 2 AND p.p_title LIKE '%ba%';
+	</select>
+	
+	<select id="selectSellSearchList" parameterType="hashMap" resultType="hashMap">
+		SELECT u.user_no,seller.user_no, p.p_title, pay.pay_price, pay.pay_date, pay.pay_state_code, cancel.pay_cancel_date
+			FROM  user u, 
+				(SELECT seller.user_no, seller.user_id 
+					FROM user seller 
+					WHERE seller.user_no = 4) seller,product p,payment pay 
+				LEFT OUTER JOIN payment_cancel cancel 
+				ON pay.pay_no = cancel.pay_no
+			WHERE u.user_no = pay.u_no AND 
+				p.p_no = pay.p_no AND 
+				seller.user_no = p.u_no AND
+				p.u_no = 4 AND p.p_title LIKE '%ba%';
+	</select>
+	
+	<select id="selectPurchaseStateList" parameterType="hashMap" resultType="hashMap">
+		SELECT u.user_no,buyer.user_no, p.p_title, pay.pay_price, pay.pay_date, pay.pay_state_code, cancel.pay_cancel_date
+			FROM  user u,
+				(SELECT buyer.user_no,buyer.user_id 
+					FROM user buyer 
+					WHERE buyer.user_no = 2) buyer,product p,payment pay 
+				LEFT OUTER JOIN payment_cancel cancel 
+				ON pay.pay_no = cancel.pay_no
+			WHERE u.user_no = p.u_no AND 
+				p.p_no = pay.p_no AND 
+				buyer.user_no = pay.u_no AND 
+				pay.u_no = 2 AND pay.pay_state_code = 1;
+	</select>
+	
+	<select id="selectSellStateList" parameterType="hashMap" resultType="hashMap">
+		SELECT u.user_no,seller.user_no, p.p_title, pay.pay_price, pay.pay_date, pay.pay_state_code, cancel.pay_cancel_date
+			FROM  user u, 
+				(SELECT seller.user_no, seller.user_id 
+					FROM user seller 
+					WHERE seller.user_no = 4) seller,product p,payment pay 
+				LEFT OUTER JOIN payment_cancel cancel 
+				ON pay.pay_no = cancel.pay_no
+			WHERE u.user_no = pay.u_no AND 
+				p.p_no = pay.p_no AND 
+				seller.user_no = p.u_no AND
+				p.u_no = 4 AND pay.pay_state_code = 1;
+	</select>
 </mapper>

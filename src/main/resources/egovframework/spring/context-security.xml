@@ -6,11 +6,12 @@
 
 	<bean id="encoder"
 		class="org.springframework.security.crypto.password.StandardPasswordEncoder" />
-	<!-- <bean id="authProvider" class="egovframework.board.login.service.impl.AuthProviderImpl" /> -->
-
+	<bean id="authProvider" class="egovframework.fleaMarket.login.service.impl.AuthProvider" />
+	<bean id="loginFailHandler" class="egovframework.fleaMarket.login.service.impl.LoginFailHandler"></bean>
+	
 	<security:http auto-config="true" use-expressions="true">
 
-		<!-- <security:intercept-url pattern="registForm.do"
+		<security:intercept-url pattern="registForm.do"
 			access="isAnonymous()" />
 		<security:intercept-url pattern="/loginForm.do"
 			access="isAnonymous()" />
@@ -19,9 +20,7 @@
 		<security:intercept-url pattern="/regist.do"
 			access="isAnonymous()" />
 		<security:intercept-url pattern="/*.do"
-			access="hasRole('ROLE_USER')" /> -->
-		<security:intercept-url pattern="/*.do"
-			access="permitAll" />
+			access="hasRole('ROLE_USER')" />
 			
 
 		<security:form-login login-page="/loginForm.do"

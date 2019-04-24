@@ -14,34 +14,38 @@
 </style>
 
 	<div class="right_col">
-           <div class="page-title">
-           	<div class="title_right">
-		       	<div class="col-md-12 col-sm-12 col-xs-12 form-group pull-right top_search">
-		            <div class="input-group">
-		                <input type="text" class="form-control" placeholder="물품명을 입력하세요...">
-		                <span class="input-group-btn">
-		                	<button class="btn btn-default" type="button">검색</button>
-		                </span>
-		           	</div>
-		           	<div class="input-group">
-		       			<select class="form-control">
-		       				<option>10개씩</option>
-	                    	<option>20개씩</option>
-	                    	<option>50개씩</option>
-	                    	<option>100개씩</option>
-		       			</select>
+         
+         <div class="page-title">
+           		<div class="title_right">
+		       		<div class="col-md-12 col-sm-12 col-xs-12 form-group top_search">
+		       			<div class="input-group pull-right">
+			       			<select data-type="buy" class="form-control sale-state">
+			       				<option value="">전체</option>
+		                    	<option value="0">입금대기</option>
+		                    	<option value="1">주문대기</option>
+		                    	<option value="2">배송대기</option>
+		                    	<option value="3">배송완료</option>
+		                    	<option value="4">환불신청</option>
+			       			</select>
+		       			</div>
+		       			<div class="input-group pull-right">
+			       			<select class="form-control">
+			       				<option>10개씩</option>
+		                    	<option>20개씩</option>
+		                    	<option>50개씩</option>
+		                    	<option>100개씩</option>
+			       			</select>
+			       		</div>
+			            <div class="input-group pull-right">
+			                <input type="text" class="form-control" placeholder="물품명을 입력하세요...">
+			                <span class="input-group-btn">
+			                	<button data-type="buy" class="btn btn-default search" type="button">검색</button>
+			                </span>
+			           	</div>
+			           	
 		       		</div>
-		       		<div class="input-group">
-		       			<select class="form-control">
-		       				<option>전체</option>
-	                    	<option>판매중</option>
-	                    	<option>예약중</option>
-	                    	<option>판매완료</option>
-		       			</select>
-		       		</div>
-		       	</div>
+        		</div>
         	</div>
-        </div>
          
          <div class="form-inline">
 	        	<div class="col-md-12 col-sm-12 col-xs-12">
@@ -69,7 +73,6 @@
                           <td> 
                           	<div class="input-group">
 	                          	<select class="form-control">
-				       				<option>전체</option>
 			                    	<option>판매중</option>
 			                    	<option>예약중</option>
 			                    	<option>판매완료</option>
@@ -91,6 +94,38 @@
                 </div>
               </div>              
 	        </div>
+	        
+	        <div class="page-title">
+           		<div class="title_right">
+		       		<div class="col-md-12 col-sm-12 col-xs-12 form-group top_search">
+		       			<div class="input-group pull-right">
+			       			<select data-type="sell" class="form-control sale-state">
+			       				<option value="">전체</option>
+		                    	<option value="0">입금대기</option>
+		                    	<option value="1">주문대기</option>
+		                    	<option value="2">배송대기</option>
+		                    	<option value="3">배송완료</option>
+		                    	<option value="4">환불신청</option>
+			       			</select>
+		       			</div>
+		       			<div class="input-group pull-right">
+			       			<select class="form-control">
+			       				<option>10개씩</option>
+		                    	<option>20개씩</option>
+		                    	<option>50개씩</option>
+		                    	<option>100개씩</option>
+			       			</select>
+			       		</div>
+			            <div class="input-group pull-right">
+			                <input type="text" class="form-control" placeholder="물품명을 입력하세요...">
+			                <span class="input-group-btn">
+			                	<button data-type="sell" class="btn btn-default search" type="button">검색</button>
+			                </span>
+			           	</div>
+			           	
+		       		</div>
+        		</div>
+        	</div>
 	        
 	       <div class="form-inline">
 	        	<div class="col-md-12 col-sm-12 col-xs-12">
@@ -141,7 +176,59 @@
                 </div>
               </div>              
 	        </div>
-                     
     </div>
     
+    <script>
+    	$(function() {
+    		
+    		$(".search").on("click",function() {
+    			
+    			var param = {
+    					text	: $(this).parent().prev().val(),
+    					type	: $(this).data("type"),
+    					user	: "1"
+    					
+    			}
+    			
+    			$.ajax({
+    				type		: "post",
+    				url			: "history_search.do",
+    				data		: JSON.stringify(param),
+    				contentType	: "application/json",
+    				success		: function(data) {
+    					console.log(data);
+    				},
+    				error		: function(error) {
+    					console.log(data);
+    				}
+    				
+    			})
+    		})
+    		
+    		$(".sale-state").on("change",function() {
+
+    			var param = {
+    					state	: $(this).val(),
+    					type	: $(this).data("type"),
+    					user	: "1"
+    					
+    			}
+    			
+    			$.ajax({
+    				type		: "post",
+    				url			: "history_state.do",
+    				data		: JSON.stringify(param),
+    				contentType	: "application/json",
+    				success		: function(data) {
+    					console.log(data);
+    				},
+    				error		: function(error) {
+    					console.log(data);
+    				}
+    				
+    			})
+    			
+    		})
+    	})
+    </script>
     

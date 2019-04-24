@@ -2,6 +2,7 @@ package egovframework.myStore.history.service.impl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -26,6 +27,46 @@ public class HistoryServiceImpl implements HistoryService {
 		
 		rtnList.add(purchaseList);
 		rtnList.add(sellList);
+		
+		return rtnList;
+	}
+
+	@Override
+	public ArrayList<Object> selectHistorySearchList(Map<String,Object> param) throws Exception {
+		
+		ArrayList<Object> rtnList = new ArrayList<Object>();
+		
+		switch (param.get("type").toString()) {
+		
+			case "buy"	:
+				ArrayList<HashMap<String,Object>> purchaseList = historyMapper.selectPurchaseSearchList(param);
+				rtnList.add(purchaseList);
+				break;
+			case "sell"	:
+				ArrayList<HashMap<String,Object>> sellList = historyMapper.selectSellSearchList(param);
+				rtnList.add(sellList);
+				break;
+		}
+		
+		return rtnList;
+	}
+
+	@Override
+	public ArrayList<Object> selectHistoryStateList(Map<String, Object> reqMap) throws Exception {
+		
+		ArrayList<Object> rtnList = new ArrayList<Object>();
+		
+		switch (reqMap.get("type").toString()) {
+		
+			case "buy"	:
+				ArrayList<HashMap<String,Object>> purchaseList = historyMapper.selectPurchaseStateList(reqMap);
+				rtnList.add(purchaseList);
+				break;
+			case "sell"	:
+				ArrayList<HashMap<String,Object>> sellList = historyMapper.selectSellStateList(reqMap);
+				rtnList.add(sellList);
+				break;
+		}
 		
 		return rtnList;
 	}
