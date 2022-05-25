@@ -17,7 +17,7 @@
     </licenses>
     
 	<properties>
-	    <spring.maven.artifact.version>4.1.2.RELEASE</spring.maven.artifact.version>
+	    <spring.maven.artifact.version>5.5.7</spring.maven.artifact.version>
 		<egovframework.rte.version>3.6.0</egovframework.rte.version>
 		<org.apache.tiles-version>3.0.8</org.apache.tiles-version>
 	</properties>
